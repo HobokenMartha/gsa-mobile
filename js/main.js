@@ -107,8 +107,8 @@ var Router = {
 
     mobileSiteHTML: function(params) {
         preLoad();
-        //console.log('MOBILESITEHTML\n==========');
-        //console.log('PATH TO AJAX= ' + params);
+        console.log('MOBILESITEHTML\n==========');
+        console.log('PATH TO AJAX= ' + params);
         $('#container').load(mRoot + '/' + params, function(data, textStatus) {
             if (textStatus === "error") {
                 loadError();
@@ -122,8 +122,8 @@ var Router = {
 
     fullSiteAJAX: function(params) {
         preLoad();
-        //console.log('FULLSITEAJAX\n==========');
-        //console.log('PATH TO AJAX= ' + wwwRoot + '/' + params);
+        console.log('FULLSITEAJAX\n==========');
+        console.log('PATH TO AJAX= ' + wwwRoot + '/' + params);
         //
         $('#container').load(wwwRoot + '/' + params + ' #content', function(data, textStatus) {
             if (textStatus !== "error") {
@@ -228,11 +228,8 @@ var Router = {
 
     function inPageAjax(){
         if($('#container .ajax')){
-            console.log('found one')
             $('#container .ajax').each(function(){
                 var req = $(this).attr('data-url')+' '+$(this).attr('data-selector');
-                console.log(req)
-                console.log($(this))
                 $(this).load(req,function(){
                     cleanContent($(this))
                     $(this).removeClass('load');
