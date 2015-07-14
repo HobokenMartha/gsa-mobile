@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GSA Mobile</title>
+		<meta content="True" name="HandheldFriendly">
+		<meta content="320" name="MobileOptimized">
+		<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+		<meta name="fragment" content="!">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/gsa-touch-icon-precomposed72.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/gsa-touch-icon-precomposed114.png">
+		<link rel="apple-touch-icon-precomposed" href="img/icons/gsa-touch-icon-precomposed.png">
+		<link rel="shortcut icon" href="img/icons/gsa-touch-icon-precomposed.png">
+		<link href="css/bootstrap.full.css" rel="stylesheet">
+		<link href="css/main.css" rel="stylesheet">
+		<script src="js/min/modernizr.min.js"></script>
+		<script src="js/min/jquery.min.js"></script>
+		<script src="js/min/bootstrap.min.js"></script>
+		<script src="js/min/swipe.min.js"></script>
+		<script src="js/min/routie.min.js"></script>
+		<script src="js/min/main.min.js"></script>
+		<script src="js/min/federated-analytics.min.js"></script>
+		<script type="text/javascript">
+			//<![CDATA[
+				var usasearch_config = { siteHandle:"m.gsa.gov" };
+
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src = "http://search.usa.gov/javascripts/remote.loader.js";
+				document.getElementsByTagName("head")[0].appendChild(script);
+			
+			//]]>
+		</script>
+		<script type="text/javascript" src="js/min/addLinkerEvents-std.min.js"></script>
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-40385006-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="top">
+				<div class="left">
+					<a href="#"><img id="starMark" src="img/starMark.png" alt="GSA logo"><img id="starMarkWithText" src="img/starMarkWithText.png" alt="GSA logo"></a>
+				</div>
+				<div class="right">
+					<button id="menu" class="btn btn-info">MENU <span>|</span> <i id="submitIcon" class="icon-search icon-white"></i></button>
+					<form class="navbar-search pull-left hidden-phone search" accept-charset="UTF-8" action="http://search.gsa.gov/search/news/" id="search_form" method="get">
+						<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+						<input id="affiliate" name="affiliate" type="hidden" value="m.gsa.gov" />
+						<input type="hidden" name="channel" value="1527">
+						<input type="text" autocomplete="off" class="usagov-search-autocomplete" id="query" name="query" placeholder="Search"><i class="icon-search"></i>
+						<input id="submit" name="commit" type="submit" value="Search" />
+					</form>
+				</div>
+			</div>
+			<div id="slideWrap">
+				<nav id="slider">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#!/travel/">Travel</a></li>
+						<li><a href="#!/buildings/">Buildings</a></li>
+						<li><a href="#!/buy-sell/">Buying &amp; Selling</a></li>
+						<li><a href="#!/regulations/">Regulations</a></li>
+						<li><a href="#!/about-gsa/">About GSA</a></li>
+					</ul>
+					<div class="search">
+						<form class="search" accept-charset="UTF-8" action="http://search.gsa.gov/search/news/" id="search_form" method="get">
+							<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+							<input id="affiliate" name="affiliate" type="hidden" value="m.gsa.gov" />
+							<input type="hidden" name="channel" value="1527">
+							<input type="text" autocomplete="off" class="usagov-search-autocomplete" id="query" name="query" placeholder="Search"><i class="icon-search"></i>
+							<input id="submit" name="commit" type="submit" value="Search" />
+						</form>
+					</div>
+				</nav>
+			</div>
+			<div id="redStripe"></div>
+			<nav id="tabs" class="hidden-phone">
+				<a class="home" href="#">Home</a>
+				<a class="travel" href="#!/travel/">Travel</a>
+				<a class="buildings" href="#!/buildings/">Buildings</a>
+				<a class="buy-sell" href="#!/buy-sell/">Buying &amp; Selling</a>
+				<a class="regulations" href="#!/regulations/">Regulations</a>
+				<a class="about-gsa" href="#!/about-gsa/">About GSA</a>
+			</nav>
+		</header>
+		<div id="load">
+			<div id="floatingCirclesG"><div class="f_circleG" id="frotateG_01"></div><div class="f_circleG" id="frotateG_02"></div><div class="f_circleG" id="frotateG_03"></div><div class="f_circleG" id="frotateG_04"></div><div class="f_circleG" id="frotateG_05"></div><div class="f_circleG" id="frotateG_06"></div><div class="f_circleG" id="frotateG_07"></div><div class="f_circleG" id="frotateG_08"></div></div>
+		</div>
+		<div class="container" id="container"></div>
+		<div class="backToTop">
+			<button class="btn">Back To Top</button>
+		</div>
+		<div id="redStripe" class="footer"></div>
+		<footer style="display:none">
+			<div class="row-fluid">
+				<ul class="span6">
+					<li><a href="#">Home</a></li>
+					<li><a href="#!/about-gsa/contact-gsa">Contact GSA</a></li>
+					<li><a href="#!/about-gsa/mobile-apps/">Mobile Apps</a></li>
+					<li><a href="#!/privacy/">Privacy Policy</a></li>
+				</ul>
+				<ul class="span6">
+					<li><a href="#!/survey?GSA Mobile&#!/&Site Feedback&#!/">Site Feedback</a></li>
+					<li><a id="fullSite" href="http://www.gsa.gov">Full Site</a></li>
+					<li>
+						<a class="iconLabel" href="#!/connected/">Stay Connected</a>
+						<a class="icon" href="http://www.facebook.com/GSA" target="_blank"><img src="img/icon-facebook.png" alt="Facebook icon"></a>
+						<a class="icon" href="http://twitter.com/usgsa" target="_blank"><img src="img/icon-twitter.png" alt="Twitter icon"></a>
+						<a class="icon" href="http://www.youtube.com/user/usgsa" target="_blank"><img src="img/icon-youtube.png" alt="YouTube icon"></a>
+						<a class="icon" href="http://gsablogs.gsa.gov/gsablog/" target="_blank"><img src="img/icon-blog.png" alt="Blog icon"></a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<div id="home">
+		<div id="mobile-home">
+		<div class="row-fluid">
+			<div class="span6">
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap">
+					<li>
+						<a class="main-nav-item" href="#!/travel">Travel <i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/travel/perdiem">Per Diem<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/portal/content/101518">Meals and Incidental Expenses<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/travel/airfares">Airfares<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/travel/mileage">Mileage Rate<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/travel/resources/travel-card.html">Travel Charge Cards<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/travel/fleet">Fleet Vehicles<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/travel/resources">Travel Resources<i class="icon-chevron-right"></i></a>
+					</li>		
+				</ul>
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap">	
+					<li>
+						<a class="main-nav-item" href="#!/about-gsa">About GSA<i class="icon-chevron-right"></i></a>
+					</li>
+					 <li class="indented-menu-item">
+						<a href="#!/about-gsa/executive-staff">Acting Administrator Denise Turner Roth<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/about-gsa/careers">Careers<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/about-gsa/payroll">Payroll Calendar<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/about-gsa/contact-gsa">Contact GSA<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/about-gsa/mobile-apps">Mobile Apps<i class="icon-chevron-right"></i></a>
+					</li>		
+				</ul>
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap">									
+					<li>
+						<a class="main-nav-item" href="#!/buildings">Buildings <i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buildings/facilities">Building | Facilities<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buildings/child-care">Child Care Centers<i class="icon-chevron-right"></i></a>
+					</li>
+				</ul>
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap">	
+					<li>
+						<a class="main-nav-item" href="#!/buy-sell">Buying &amp; Selling <i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buy-sell/how-to-buy">How To Buy<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buy-sell/how-to-sell">How To Sell<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buy-sell/small-business">Opportunities for<br> Small Businesses<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buy-sell/list-schedules">List of GSA Schedules<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="#!/buy-sell/interact">Interact<i class="icon-chevron-right"></i></a>
+					</li>	
+					<li class="indented-menu-item">
+						<a href="#!/buy-sell/schedules-contracts">Introduction to Schedules &amp; Contracts<i class="icon-chevron-right"></i></a>
+					</li>	
+				</ul>
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap bottom-margin">
+					<li>
+						<a class="main-nav-item" href="#!/regulations/">Regulations <i class="icon-chevron-right"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="span6">
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap">
+					<li>
+						<a class="main-nav-item" href="http://gsablogs.gsa.gov/gsablog/" target="_blank">GSA's Latest News<i class="icon-chevron-right"></i></a>
+					</li>
+					<div id="homepageRFB"></div>
+				</ul>
+				<ul class="nav nav-tabs nav-stacked linktab indented-menu-item-wrap">
+					<li>
+						<a class="main-nav-item" href="#!/connected/">Stay Connected<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="http://gsablogs.gsa.gov/gsablog/" target="_blank"><img class="left-side-icon" src="img/Blogs_icon_24.png" alt="Blog icon">GSA Blog</span><i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="https://www.facebook.com/GSA" target="_blank"><img class="left-side-icon" src="img/facebook_icon_24.png" alt="Facebook icon">Facebook<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="http://www.youtube.com/user/usgsa" target="_blank"><img class="left-side-icon" src="img/youtube_icon_24.png" alt="YouTube icon">YouTube<i class="icon-chevron-right"></i></a>
+					</li>
+					<li class="indented-menu-item">
+						<a href="https://twitter.com/usgsa" target="_blank"><img class="left-side-icon" src="img/twitter_icon_24.png" alt="Twitter icon">Twitter<i class="icon-chevron-right"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div id="banner-ER-stage"></div>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpUY4dGa_KFp-Rf4oNtabKFZYs37KDizU&sensor=false"></script>
+	<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAaJR-LoKQ_vOdH-rDuzQIrhTp9TQGS9bu-sCl-drCd-KdfphZyRSK8fkjscIn3IWZHOeYObhp0XmVUg"></script>
+	</body>
+</html>

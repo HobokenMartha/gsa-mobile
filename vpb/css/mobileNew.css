@@ -1,0 +1,117 @@
+body,td,span,input,select,textarea,div { color:#e6e6e6; font-family:Arial,sans-serif; font-size:14px; line-height:20px; }  
+p { color:#e6e6e6; font-family:Arial,sans-serif; font-size:14px; line-height:20px; margin-top:10px; margin-bottom:6px; }  
+
+.vpbbody { width:100%; background-color:#4a494c; }
+.vpbbody div { display:block; }
+
+.clear { clear:both; }
+
+a:link { color:#fdb913; text-decoration:none; }
+a:visited { color:#fdb913; text-decoration:none; }
+a:active { color:#fff; text-decoration:none; }
+a:hover { color:#fff; text-decoration:none; }
+
+.yellow { color:#fdb913; }
+.yellowbg { background-color:#fdb913; color:#1a1a1a; }
+.dkgreybg { background-color:#4a494c; }
+.ltgreybg { background-color:#808080; }
+.dkdkgreybg { background-color:#333; }
+
+.firstname { font-size:24px; line-height:20px; padding:12px; }
+.copy { padding:8px 12px 8px 12px; }
+.copy2 { padding:8px 12px 12px 12px; }
+
+.regionname { font-size:19px; line-height:22px; padding:12px; }
+a:link .regionname { color:#fff; text-decoration:none; }
+a:visited .regionname { color:#fff; text-decoration:none; }
+a:active .regionname { color:#fdb913; text-decoration:none; }
+a:hover .regionname { color:#fdb913; text-decoration:none; }
+
+.topname { font-size:16px; line-height:20px; padding:8px; }
+.topname a:link { color:#fff; text-decoration:none; }
+.topname a:visited { color:#fff; text-decoration:none; }
+.topname a:active { color:#fff; text-decoration:none; }
+.topname a:hover { color:#fff; text-decoration:none; }
+.topnameC { height:55px; }
+
+.directions { font-size:19px; line-height:22px; color:#1a1a1a; padding:12px; }
+.directions a { color:#1a1a1a; text-decoration:none; }
+
+.headline { font-size:18px; line-height:20px; color:#1a1a1a; padding:6px 12px 6px 12px; }
+.headline a { color:#1a1a1a; text-decoration:none; }
+
+.mainlink { font-size:19px; line-height:22px; padding:8px 12px 8px 12px; }
+a:link div .mainlink { color:#fff; text-decoration:none; }
+a:visited div .mainlink { color:#fff; text-decoration:none; }
+a:active div .mainlink { color:#fdb913; text-decoration:none; }
+a:hover div .mainlink { color:#fdb913; text-decoration:none; }
+.mainlinkC { background:url(/m/vpb/images/buttonBack.gif) top left repeat-x; }
+
+.mainlink2 { font-size:16px; line-height:20px; padding:8px 12px 8px 12px; }
+a:link div .mainlink2 { color:#fff; text-decoration:none; }
+a:visited div .mainlink2 { color:#fff; text-decoration:none; }
+a:active div .mainlink2 { color:#fdb913; text-decoration:none; }
+a:hover div .mainlink2 { color:#fdb913; text-decoration:none; }
+.mainlink2C { background:url(http://m.gsa.gov/m/vpb/images/buttonBack2.gif) top left repeat-x; }
+
+.iconBack { background:url(http://m.gsa.gov/m/vpb/images/iconBack.gif) top left repeat-x; text-align:center; }
+
+.footer { font-size:12px; line-height:18px; } 
+
+.headtext { color:#fdb913; font-size:16px; line-height:20px; }
+.headtextS { color:#fdb913; font-size:16px; line-height:20px; padding:6px 12px 6px 12px; }
+
+.shadow { text-shadow:2px 2px 1px #333; }
+
+input { border:1px #1a1a1a solid; }
+textarea { border:1px #1a1a1a solid; }
+.noborder { border:0px }
+
+div.gallery-row:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
+div.gallery-item { float:left; width:50%; }
+div.gallery-item a { display:block; margin:6px;  }
+div.gallery-item img { display:block; width:100%; height:auto; }
+
+.galleryInfo { position:absolute;top:12px;width:80%;background-color:black;color:white;padding:10px;display:none;z-index:100; }
+
+.Ybtn {
+	float: left;
+	background: url(http://m.gsa.gov/m/vpb/images/YbuttonLeft.gif) no-repeat;
+	padding: 0 0 0 10px;
+	margin: 5px 8px 0 0;
+}
+.Ybtn a:link, .Ybtn a:visited, .Ybtn a:active, .Ybtn a:hover {
+	float: left;
+	height: 26px;
+	background: url(http://m.gsa.gov/m/vpb/images/YbuttonBack.gif) repeat-x left top;
+	line-height: 24px;
+	text-decoration: none;
+	color:#333;  
+}
+.Ybtn span {
+	background: url(http://m.gsa.gov/m/vpb/images/YbuttonRight.gif) no-repeat;
+	float: left;
+	width: 10px;
+	height: 26px;
+}
+.Gbtn {
+	float: left;
+	background: url(http://m.gsa.gov/m/vpb/images/GbuttonLeft.gif) no-repeat;
+	padding: 0 0 0 5px;
+	margin: 5px 4px 0 0;
+}
+.Gbtn a:link, .Gbtn a:visited, .Gbtn a:active, .Gbtn a:hover {
+	float: left;
+	height: 16px;
+	background-color: #363636;
+	color: #fff;
+	line-height: 16px;
+	text-decoration: none;
+	font-size:10px;
+}
+.Gbtn span {
+	background: url(http://m.gsa.gov/m/vpb/images/GbuttonRight.gif) no-repeat;
+	float: left;
+	width: 5px;
+	height: 16px;
+}

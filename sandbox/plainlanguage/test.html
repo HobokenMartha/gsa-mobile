@@ -1,0 +1,774 @@
+<!-- IS THIS COMMITTING? -->
+<html class="" lang="en-us"><!--<![endif]--><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+
+		
+		 		
+				
+		
+		<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-theme-styles.css" type="text/css">	
+		
+		<!-- Theme specific css files: defaultTheme -->
+		
+			<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-default-styles.css" type="text/css"> 
+		
+				<!-- Layout specific css files -->
+		
+		<!-- End: Layout specific css files -->
+		
+		 
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="http://gsa.gov/resources/js/pulldown.js"></script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/datetimepicker.js"> </script>
+		
+	
+ 
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.min.js"></script>
+		
+		<!-- HELPER SCRIPTS -->
+		<script type="text/javascript" src="http://gsa.gov/resources/js/mobile.js"></script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.cookie.js"></script>
+ 		<script type="text/javascript" src="http://gsa.gov/resources/js/helper.js"></script>
+ 		<script type="text/javascript" src="http://gsa.gov/resources/js/plugins.js"></script>
+ 		
+ 		<!-- JQUERY UI -->
+ 		<script type="text/javascript" src="http://gsa.gov/resources/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+ 		<link rel="stylesheet" href="http://gsa.gov/resources/jquery-ui/jquery-ui-1.10.0.bootstrap.css">
+ 		
+
+
+		
+	
+		
+					
+		<!-- Layout specific script files -->
+		
+		<!-- End: Layout specific script files -->
+		<script type="text/javascript" src="http://gsa.gov/resources/js/tabbedMenuDynamic_8.js"> </script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery-bgiframe.js"></script>		
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.focus.js"></script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.hoverIntent.minified.js"> </script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/dropdown.js"></script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/swfobject.js"> </script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/homeflashmovie.js"> </script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.rotatingFeatureBlock.js"></script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/emergencyResponse.js"></script>
+		<link type="text/css" href="http://gsa.gov/resources/assets/css/styles.css" rel="stylesheet">	
+		
+   		<script type="text/javascript">
+	    	var uri = '/portal';
+
+	    	function getChunk(infoId, divId) {
+		    	var url =  uri + "/chunk/" + infoId;
+		    	setAjaxBlock(url, divId);
+	    	}
+	    	function getRFBChunk(infoId, divId) {
+		    	var url =  uri + "/rfbchunk/" + infoId;
+	    		document.getElementById(divId).innerHTML='<img src="http://gsa.gov/resources/images/loading.gif" border="0"/>';
+		    	$.ajax({
+		    		   type: "GET",
+		    		   url: url,
+		    		   success: function(msg){
+		    			   document.getElementById(divId).innerHTML= msg;
+		    			   $('#rfb').slideShow();
+		    		   }
+		    	});
+	    	}
+	    	function getRss(rssFeedUrl, divId, rssStyle, count) {
+		    	var url =  uri + "/rss/items?rssFeedUrl=" + rssFeedUrl 
+		    						+ "&rssItemCount=" + count + "&rssStyle=" + rssStyle;
+		    	setAjaxBlock(url, divId);
+	    	}
+
+	    	// Pass the actionUrl starting with / Example: /portal/getAcronyms
+	    	function getActionResult(actionUrl, divId) {
+		    	var url =  uri + actionUrl;
+		    	//alert(url);
+		    	setAjaxBlock(url, divId);
+	    	}
+
+	    	function getAcronymBySearch(actionUrl,divId){
+	    		//alert("Inside the acronym Method..");	
+	    		var acronymName = document.getElementById('acronymName').value;
+	    		//alert(acronymName)
+	    		if(acronymName==""){
+	    			acronymName="";
+	    		}
+	    		var url =  uri + actionUrl+"?acronymName="+acronymName;
+	    		//alert(url);
+	    		setAjaxDialogBlock(url, divId);
+	    	}
+	    	
+	    	function setAjaxBlock(url, divId) {
+	    		document.getElementById(divId).innerHTML='<img src="http://gsa.gov/resources/images/loading.gif" border="0"/>';
+		    	$.ajax({
+		    		   type: "GET",
+		    		   url: url,
+		    		   success: function(msg){
+		    			   document.getElementById(divId).innerHTML= msg;
+		    		   }
+		    		 });
+	    	}
+	    	 
+	    	function setAjaxDialogBlock(url, divId) {
+	    		document.getElementById(divId).innerHTML='<img src="http://gsa.gov/resources/images/loading.gif" border="0"/>';
+		    	$.ajax({
+		    		   type: "GET",
+		    		   url: url,
+		    		   success: function(msg){
+		    			 document.getElementById(divId).innerHTML= msg;
+		    			  //$(divId).dialog({height: 200,modal: true});
+
+							//alert("After msg="+msg);
+		    		   }
+		    	
+		    		 });
+	    	}
+	    	
+	    </script>   	
+	   <!--    	
+		<script type="text/javascript">
+			$(document).ready(
+				function (){
+					$("#pikame").PikaChoose();
+
+					$("#pikame").jcarousel({scroll:4,initCallback: function(carousel) 
+						{
+					        $(carousel.list).find('img').click(function() {
+					        	//console.log($(this).parents('.jcarousel-item').attr('jcarouselindex'));
+					            carousel.scroll(parseInt($(this).parents('.jcarousel-item').attr('jcarouselindex')));
+					        });
+					    }
+				    });
+
+				});
+		</script>
+ 		-->
+ 		
+		<!-- NEW SSCRIPTS FOR GALLERIFFIC -->
+		 
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.history.js"></script>		
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.galleriffic.js"></script>
+		<script type="text/javascript" src="http://gsa.gov/resources/js/jquery.opacityrollover.js"></script>
+ 
+
+		
+		<!-- NEW STYLESHEETS FOR GALLERIFFIC -->
+		<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-grey.css" type="text/css">
+		
+	    <!-- SEPARATED TYLESHEETS TO EVENTUALLY BREAK OUT BY THEME -->
+ 		<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-forms-library.css" type="text/css">
+ 		<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-events.css" type="text/css">
+ 		<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-popup-styles.css" type="text/css">
+ 		<link rel="stylesheet" href="http://gsa.gov/resources/css/gsa-rfb-styles.css" type="text/css">
+ 		
+ 		<!-- FANCYBOX -->
+ 		<link rel="stylesheet" href="http://gsa.gov/resources/fancybox/jquery.fancybox.css" type="text/css">
+ 		<script src="http://gsa.gov/resources/fancybox/jquery.fancybox.min.js" type="text/javascript"></script>
+
+	
+
+
+  
+  
+  
+   
+  
+  		<title></title>
+  
+   		<meta property="twitter:account_id" content="61583656">
+   		<meta name="PCODE" content="">
+ 		<meta name="NAMECODE" content="">
+ 		<meta name="PROVIDERCODE" content="">
+
+ 		<meta name="program" content="">
+        <meta name="title" content="">
+ 		<meta name="organization" content="">
+ 		
+ 		
+		<style type="text/css">
+  /*this is what we want the div to look like
+    when it is not showing*/
+  div.loading-invisible{
+    /*make invisible*/
+    display:none;
+  }
+
+  /*this is what we want the div to look like
+    when it IS showing*/
+  div.loading-visible{
+    /*make visible*/
+    display:block;
+
+    /*position it 200px down the screen*/
+    position:absolute;
+    top:200px;
+    left:0;
+    width:100%;
+    text-align:center;
+
+    /*in supporting browsers, make it
+      a little transparent*/
+    background:#fff;
+    filter: alpha(opacity=75); /* internet explorer */
+    -khtml-opacity: 0.75;      /* khtml, old safari */
+    -moz-opacity: 0.75;       /* mozilla, netscape */
+    opacity: 0.75;           /* fx, safari, opera */
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+  }
+</style>
+    
+          <!-- GOVERNMENT WIDE TRACKING GA CODE -->
+<script type="text/javascript" src="http://gsa.gov/resources/js/federated-analytics.js"></script>
+<script type="text/javascript" src="http://gsa.gov/resources/js/addLinkerEvents-std.js"></script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-28449919-1']);
+	//Commented as per sarah Hyder. It will stay commented for another 30 days from the day we deploy then it has to be removed. commented on 05/22/2012	
+	//_gaq.push(['_setVisitorCookieTimeout', 0]);
+	//_gaq.push(['_setSessionCookieTimeout', 0]);
+	//_gaq.push(['_setCampaignCookieTimeout', 0]);
+	_gaq.push(['_setCustomVar',1,'title','',3]);
+	_gaq.push(['_setCustomVar',2,'organization','',3]);
+	_gaq.push(['_setCustomVar',3,'program','',3]);
+	_gaq.push(['_trackPageview']);
+	
+	(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+</script>
+    
+     
+<script type="text/javascript" src="https://search.usa.gov/javascripts/remote.loader.js"></script><script type="text/javascript" src="//www.gsa.govhttp://gsa.gov/resources/js/foresee/foresee-surveydef.js?build=3"></script><link type="text/css" href="//search.usa.gov/assets/sayt.css" rel="stylesheet" media="screen"><script type="text/javascript" src="//search.usa.gov/assets/sayt_loader_libs.js"></script><script type="text/javascript" src="//search.usa.gov/assets/stats.js"></script><meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;Google Analytics&quot;:-1,&quot;jQuery&quot;:&quot;1.7&quot;,&quot;jQuery UI&quot;:&quot;1.10.2&quot;}"><script type="text/javascript" src="chrome-extension://homgcnaoacgigpkkljjjekpignblkeae/detector.js"></script></head>   	
+<body>
+	<!--  skip nav -->
+	 
+		<div id="skip-to-content-destination"><a href="#content" class="skip-content">Skip to main content</a></div>
+	
+	
+    <!--googleoff: all-->
+    <div id="gray"></div>
+	<div id="wrapper">
+		
+
+<div id="curtain" style="display:none;"></div>
+<div id="header">  
+	<a href="/HDR_0_home" style=" float: left;"><img width="286" height="50" border="0" alt="GSA Logo" style="margin-top: 22px;" src="http://gsa.gov/resources/images/GSAlogo.gif"></a>
+		<div id="GSAloginHeader">
+           		 <ul>
+		 		 <li><a title="home" href="/HDR_0_home">Home</a></li>
+		 		 <li>|</li>
+		 		 <li><a id="mobileSite" title="mobile" href="#">Mobile Site</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="newsroom" href="/newsroom">Newsroom</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="Regions" href="/HDR_0_regions">Regions</a></li>
+		 		 <li>|</li>
+		 		 <li>
+		 		 <a id="link0" href="/portal/staffDirectory/searchStaffDirectory" title="Staff Directory">Staff Directory</a>
+		 		 </li> <li>|</li>
+		 		 <li><a title="Careers" href="/HDR_0_careers">Careers</a></li>
+		 		 <li>|</li>
+		 		 <li><a href="/portal/forms/type/TOP" title="Forms">Forms</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="e-Tools" href="/HDR_0_etools">e-Tools</a></li>
+		 		 <li>|</li>
+		 		 <li><a title="QuickLinks" href="/HDR_0_quicklinks">QuickLinks</a></li>
+		 </ul>
+		</div>
+		<div class="clear"><img src="http://gsa.gov/resources/images/transparent.gif" height="1" alt=""></div>
+		<div id="GSAsearchHeader">
+				
+		<form accept-charset="UTF-8" action="http://search.gsa.gov/search" id="search_form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+
+		    <input id="affiliate" name="affiliate" type="hidden" value="gsa.gov">
+		    <label for="query">Enter Search Term(s):</label>
+		    <input autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input" id="query" name="query" type="text" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+		    <input name="commit" type="submit" value="Search">
+  		</form>
+		 
+		  <!-- 
+		<form id="search" name="search" action="/portal/search" method="GET"> 
+				 <label for="searchBox">Search</label>
+			     <input autocomplete="off" class="usagov-search-autocomplete" id="searchBox" accessKey="" tabindex="0" type="text" name="q" alt="Enter search term" value=""/>
+	   		     <input accessKey="" tabindex="0" type="image" src="http://gsa.gov/resources/images/button_search.gif" alt="Click to Search" id="searchButton" />
+			     <input type="hidden" name="btnG" value="Google Search"/>
+			     <input type="hidden" name="access" value="p"/>
+			     <input type="hidden" name="client" value="ASTO_PROD_FRONT_END"/>
+			     <input type="hidden" name="output" value="xml_no_dtd"/>
+			     <input type="hidden" name="proxystylesheet" value="ASTO_PROD_FRONT_END"/>
+			     <input type="hidden" name="entqr" value="3"/>
+			     <input type="hidden" name="oe" value="UTF-8"/>
+			     <input type="hidden" name="ud" value="1"/>
+			     <input type="hidden" name="site" value="ASTO_PROD_COLLECTION"/>
+			     <input type="hidden" name="getfields" value="description"/>
+			     <input type="hidden" name="filter" value="0"/>
+			     <input type="hidden" name="num" value="30"/>
+			     
+			     <input id="m" name="m" type="hidden" />
+			     <input type="hidden" name="affiliate" value="gsa.gov" />			     			     
+			     </form>
+
+
+
+
+			 -->
+			</div>
+		<!-- Mobile Forward -->
+		<!--<div id="mobileForward">
+			<div>
+				<h1>GSA Mobile</h1>
+				<p><strong>We see youre using a mobile device.</strong></p>
+				<p>Would you like to try our mobile site: dev.m.gsa.gov?</p>
+				</div>
+				<div class="bottom">
+					<button id="stay" class="mobileButton">Stay on Full Site</button>
+					<button id="continue" class="mobileButton buttonBlue">Continue to Mobile Site</button>
+				<div class="always">
+					<label>Always Do This</label>
+					<input id="always" name="always" type="checkbox"/>
+				</div>
+			</div>
+		</div>-->
+		<!-- top navigation -->
+		 		 <div id="topnav">
+	 		 		 <ul>
+		 		 		 <li class="tab" id="gsa_offers">
+ 		  		 		  <a href="#" class="mainlk">What GSA Offers</a>
+ 		  		 		  <div class="submenu">
+ 	  		 		  		<ul>
+ 		  		 		  	  <li><h2><a href="/portal/category/20987">BUILDINGS &amp; REAL ESTATE</a></h2></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_design">Design &amp; Construction</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_environmental">Environmental Programs</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_properties">GSA Properties</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_historic">Historic Preservation</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_facilities">Facilities Management</a></li>
+	 		  		 		  <li><a href="/HDR_1_Bldgs_realty">Realty Services</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_1_Bldgs_workplace">WorkPlace Innovation</a></li>
+ 	 		  		 		  </ul> 
+ 	 		  		 		<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21027">PRODUCTS &amp; SERVICES</a></h2></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_acquisition">Acquisition Solutions</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_2_Prdcts_energy">Energy &amp; Environmental</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_supplies">Facilities, Supplies, Equipment, &amp; Tools</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_office">Office Supplies, Equipment, &amp; Furniture</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_professional">Professional &amp; Technical Solutions</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_property">Property for Disposal/Sale</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_security">Security, Fire, &amp; Law Enforcement</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_sharedsvcs">Shared Services</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_technology">Technology &amp; Telecommunications</a></li>
+	 		  		 		  <li><a href="/HDR_2_Prdcts_transportation">Transportation, Relocation &amp; Vehicles</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_2_Prdcts_travel">Travel</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21219">POLICY &amp; REGULATIONS</a></h2></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_acquisition">Acquisition Policy</a></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_aircraft">Aviation Management Policy</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_technology">Information, Integrity, &amp; Access</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_mail">Mail Management Policy</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_personal">Personal Property Management Policy</a></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_innovation">Policy Performance</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_real">Real Property Management Policy</a></li>
+	 		  		 		  <li><a href="/HDR_3_Plcy_regulations">Regulations: FMR, FTR, &amp; FAR</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_transportation">Transportation Management Policy</a></li>
+	 		  		 		   <li><a href="/HDR_3_Plcy_travel">Travel and Relocation Policy</a></li>
+	        		 		  <li class="NOSEPARATOR"><a href="/HDR_3_Plcy_vehicle">Vehicle Management Policy</a></li>
+ 		  		 		  	</ul>
+          		 		 		 <div class="clear"></div>
+ 		  		 		   </div>
+ 		  		 </li>
+ 		  		 <li class="tab" id="business_gsa">
+ 		  		 		  <a href="#" class="mainlk">Doing Business with GSA</a>
+ 		  		 		  <div class="submenu">
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/20998">PURCHASING PROGRAMS</a></h2></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_schedules">GSA Schedules</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_tech">Technology Programs</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_acquisition">Assisted Acquisition</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_requisition">Requisition Programs</a></li>
+     		 		 		  <li><a href="/HDR_4_Prchsng_fleet">GSA Fleet &amp; Automotive</a></li>
+	 		  		 		  <li><a href="/HDR_4_Prchsng_global">GSA Global Supply</a></li>
+     		 		 		  <li><a href="/HDR_4_Prchsng_travel">GSA Travel Programs</a></li>
+      		 		 		  <li><a href="/HDR_4_Prchsng_personal">Personal Property Management</a></li>
+     		 		 		  <li><a href="/HDR_4_Prchsng_smartpay">SmartPay (Charge Card) Services</a></li>
+     		 		 		  <li class="NOSEPARATOR"><a href="/HDR_4_Prchsng_gettingstarted">Getting Started</a></li>
+  		 		  		 	</ul>
+  		 		  		 	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21122">REAL ESTATE SERVICES</a></h2></li>
+     		 		 		  <li><a href="/HDR_5_RealEstScvs_opps">Finding Business Opportunities</a></li>
+      		 		 		  <li><a href="/HDR_5_RealEstScvs_cstmrs">For Federal Customers</a></li>
+      		 		 		  <li><a href="/HDR_5_RealEstScvs_workers">For Workers in Federal Buildings</a></li>
+      		 		 		  <li class="NOSEPARATOR"><a href="/HDR_5_RealEstScvs_property">Property for Disposal/Sale</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  		  <div class="clear"></div>
+ 		  		 		  </div>
+ 		  		 </li>
+ 		  		 <li class="tab" id="learn_more">
+ 		  		 		  <a href="#" class="mainlk" style="text-indent: -9999px">Learn More</a>
+ 		  		 		  <div class="submenu">
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/21023">HOW WE HELP</a></h2></li>
+	 		  		 		  <li><a href="/HDR_6_Help_govtcustomers">Government Customers</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_state">State and Local Governments</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_fedemployees">Federal Employees</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_6_Help_businesses">Businesses</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_citizens">Citizens &amp; Consumers</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_disabilities">Americans with Disabilities</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_6_Help_tribes">Native American Tribes</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_emergency">Emergency Response</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_support">Customer Support</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_presidential">Presidential Transition</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_recovery">Recovery Act</a></li>
+	 		  		 		  <li><a href="/HDR_6_Help_open">Open Government</a></li>
+							  <li><a href="/HDR_6_Help_mobilegov">Mobile Government</a></li>
+		 		 		  	  <li><a href="/HDR_6_Help_areasinterest">Areas of Interest</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_6_Help_new">New to GSA?</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/20982">ABOUT GSA</a></h2></li>
+	 		  		      	  <li><a href="/HDR_7_Aboutgsa_background">Background &amp; History</a></li>
+	 		  		 		  <li><a href="/portal/event/getEvents/">Events</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_training">Training Programs</a></li>
+		 		 		      <li><a href="/HDR_7_Aboutgsa_organization">Organization</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_careers">Careers</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_reports">Budget, Performance, &amp; Agency Reports</a></li>
+	 		  		 		  <li><a href="/directives">Orders &amp; Directives</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_reference">Reference</a></li>
+	 		  		 		  <li><a href="/HDR_7_Aboutgsa_catalogs">Catalogs, Publications, &amp; Newsletters</a></li>
+	 		  		 		  <li><a href=" /HDR_7_Aboutgsa_socialmedia">Social Media</a></li>
+	 		  		 		  <li class="NOSEPARATOR"><a href="/HDR_7_Aboutgsa_staffdirectory">Staff Directory</a></li>
+ 		  		 		  	</ul>
+ 		  		 		  	<ul>
+	 		  		 		  <li><h2><a href="/portal/category/26627">NEWSROOM</a></h2></li>
+	 		  		 		  <li><a href="/HDR_8_News_releases">News Releases</a></li>	 		  		 		  
+	 		  		 		  <li><a href="/HDR_8_News_photogalleries">Photo Galleries</a></li>
+	 		  		 		  <li><a href="/HDR_8_News_videos">Videos</a></li>
+	 		  		 		  <li><a href="/HDR_8_News_speeches">Speeches</a></li>
+	 		  		 		  <li><a href="/HDR_8_News_congress">Congressional Testimony</a></li>
+ 		  		 		  	</ul>
+  		 		  		 	<div class="clear"></div>
+ 		  		 		  </div>
+ 		    </li>
+			<li class="tab" id="blogs">
+				<a href="/HDR_Blogs" class="mainlk" style="text-indent: -9999px">Blog</a>
+			</li>
+ 		 </ul>
+ 		 </div>
+		 		 <!-- top nav end -->
+	
+</div>			<!-- header  -->
+
+<script type="text/javascript" language="javascript">
+ (function() {
+    var id = document.getElementById('search');   
+    if (id && id.q) {
+      var name = id.q;      
+      var unclicked = function() {
+          if (name.value == '') {
+              name.style.background = '#FFFFFF url(http://gsa.gov/resources/images/search_magnifyingGlass.gif) left no-repeat';
+          }
+       };
+       var clicked = function() {
+          name.style.background = '#ffffff';
+       };
+    name.onfocus = clicked;
+    name.onblur = unclicked;
+    unclicked();
+    }
+  })();
+</script>
+
+		
+<style>
+	
+</style>
+<script type="text/javascript" src="gsaFeedback.js"></script>
+<script>
+$(function(){
+	$('body').gsaFeedback({
+		'tabText':'Tell us what you think: Was this page clear?',
+		'formKey':'dDVxUm1laXZFaFZ2dXRNYVAzZHRpRHc6MQ'
+	});
+});
+</script>
+<div id="pageLayout">
+
+	<style>
+		form label,form input{
+			float:left;
+		}
+	</style>
+	<div id="staffdirectory" class="bootstrap">
+	
+	
+		<script>var root = 'http://dev.m.gsa.gov';</script>
+	
+		<link href="http://dev.m.gsa.gov/m/css/bootstrap-container.css" rel="stylesheet">
+		
+			<script type="text/javascript" src="http://dev.m.gsa.gov/m/js/staffDirectory.js"></script>
+			
+
+	<form class="well staffDirectory">
+		<div class="control-group">
+			<div class="controls">
+				<div class="row-fluid">
+					<div class="span4">
+						<label for="lastName" class="control-label">Last Name:</label>
+						<input type="text" id="lastName" placeholder=""><br>
+					</div>
+					<div class="span4">
+						<label for="firstName" class="control-label">First Name:</label>
+						<input type="text" id="firstName" placeholder=""><br>
+					</div>
+					<span class="help-inline"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="control-group">
+				<div class="controls">
+						<div class="span4">
+							<label for="lastName" class="control-label">State:</label>
+							<select name="state" id="state">
+								<option value="none">Select a State</option>
+								<option value="AL">Alabama</option>
+								<option value="AK">Alaska</option>
+								<option value="AZ">Arizona</option>
+								<option value="AR">Arkansas</option>
+								<option value="CA">California</option>
+								<option value="CO">Colorado</option>
+								<option value="CT">Connecticut</option>
+								<option value="DE">Delaware</option>
+								<option value="DC">District of Columbia</option>
+								<option value="FL">Florida</option>
+								<option value="GA">Georgia</option>
+								<option value="HI">Hawaii</option>
+								<option value="ID">Idaho</option>
+								<option value="IL">Illinois</option>
+								<option value="IN">Indiana</option>
+								<option value="IA">Iowa</option>
+								<option value="KS">Kansas</option>
+								<option value="KY">Kentucky</option>
+								<option value="LA">Louisiana</option>
+								<option value="ME">Maine</option>
+								<option value="MD">Maryland</option>
+								<option value="MA">Massachusetts</option>
+								<option value="MI">Michigan</option>
+								<option value="MN">Minnesota</option>
+								<option value="MS">Mississippi</option>
+								<option value="MO">Missouri</option>
+								<option value="MT">Montana</option>
+								<option value="NE">Nebraska</option>
+								<option value="NV">Nevada</option>
+								<option value="NH">New Hampshire</option>
+								<option value="NJ">New Jersey</option>
+								<option value="NM">New Mexico</option>
+								<option value="NY">New York</option>
+								<option value="NC">North Carolina</option>
+								<option value="ND">North Dakota</option>
+								<option value="OH">Ohio</option>
+								<option value="OK">Oklahoma</option>
+								<option value="OR">Oregon</option>
+								<option value="PA">Pennsylvania</option>
+								<option value="PR">Puerto Rico</option>
+								<option value="RI">Rhode Island</option>
+								<option value="SC">South Carolina</option>
+								<option value="SD">South Dakota</option>
+								<option value="TN">Tennessee</option>
+								<option value="TX">Texas</option>
+								<option value="UT">Utah</option>
+								<option value="VT">Vermont</option>
+								<option value="VA">Virginia</option>
+								<option value="WA">Washington</option>
+								<option value="WV">West Virginia</option>
+								<option value="WI">Wisconsin</option>
+								<option value="WY">Wyoming</option>
+							</select>
+						</div>
+						<div class="span4">
+							<label for="firstName" class="control-label">Zip Code:</label>
+							<input type="text" pattern="\d*" id="zip" placeholder="">
+						</div>
+				<span class="help-inline"></span>
+			</div>
+		</div>
+			<div class="span4">
+				<button id="search" class="btn btn-primary btn-large">Search</button>
+				<button class="btn" type="reset">Reset</button>
+			</div>
+		</div>
+	</form>
+	<form class="well byTopic">
+		<div class="control-group">
+			<div class="controls">
+				<!--<label for="contactGroup">Search by Topic:</label>-->
+				<select id="contactGroup">
+					<option value="none">Select a Topic</option>
+				    <option value="Aircraft%20Management%20Policy">Aircraft Management Policy</option>
+				    <option value="Airline%20City%20Pairs">Airline City Pairs</option>
+				    <option value="Area%20Property%20Officers">Area Property Officers</option>
+				    <option value="Border%20Stations">Border Stations</option>
+				    <option value="Build%20Green%20Coordinators">Build Green Coordinators</option>
+				    <option value="Center%20for%20IT%20Schedule%20Programs">Center for IT Schedule Programs</option>
+				    <option value="Child%20Care">Child Care</option>
+				    <option value="Child%20Care%20Coordinators">Child Care Coordinators</option>
+				    <option value="CHRIS">CHRIS</option>
+				    <option value="Congressional%20Services%20Representatives">Congressional Services Representatives</option>
+				    <option value="CONNECTIONS%20Customer%20Representatives">CONNECTIONS Customer Representatives</option>
+				    <option value="Council%20Contacts">Council Contacts</option>
+				    <option value="Customer%20Service%20Directors">Customer Service Directors</option>
+				    <option value="Design%20Excellence%20Program">Design Excellence Program</option>
+				    <option value="EEO%20Officers%20and%20Staff">EEO Officers and Staff</option>
+				    <option value="Electronic%20Business%20Systems">Electronic Business Systems</option>
+				    <option value="Energy%20Center%20of%20Expertise">Energy Center of Expertise</option>
+				    <option value="Energy%20Regional%20Coordinators">Energy Regional Coordinators</option>
+				    <option value="Enterprise%20GWAC%20Center%20(Southwest)">Enterprise GWAC Center (Southwest)</option>
+				    <option value="Environmental">Environmental</option>
+				    <option value="FEDDESK">FEDDESK</option>
+				    <option value="Federal%20Vehicle%20Policy">Federal Vehicle Policy</option>
+				    <option value="Fire%20Protection%20and%20Life%20Safety">Fire Protection and Life Safety</option>
+				    <option value="FOIA">FOIA</option>
+				    <option value="Governmentwide%20Employee%20Relocation%20Services">Governmentwide Employee Relocation Services</option>
+				    <option value="Health%20and%20Safety">Health and Safety</option>
+				    <option value="Historic%20Preservation">Historic Preservation</option>
+				    <option value="Leasing">Leasing</option>
+				    <option value="Local%20Courier%20Delivery%20Services">Local Courier Delivery Services</option>
+				    <option value="Local%20Telecommunications%20Services">Local Telecommunications Services</option>
+				    <option value="National%20Broker%20Contract">National Broker Contract</option>
+				    <option value="National%20Environmental%20Policy%20Act%20(NEPA)%20Advisory%20Group">National Environmental Policy Act (NEPA) Advisory Group</option>
+				    <option value="Office%20Relocation%20Services">Office Relocation Services</option>
+				    <option value="Personal%20Property%20Management%20Division">Personal Property Management Division</option>
+				    <option value="Personal%20Property%20Management%20Offices">Personal Property Management Offices</option>
+				    <option value="Real%20Estate%20Services">Real Estate Services</option>
+				    <option value="Real%20Property%20Management">Real Property Management</option>
+				    <option value="Regional%20Emergency%20Coordinators">Regional Emergency Coordinators</option>
+				    <option value="Regional%20Historic%20Preservation%20Officers">Regional Historic Preservation Officers</option>
+				    <option value="Regional%20Urban%20Development%20Officers">Regional Urban Development Officers</option>
+				    <option value="Regional%20WorkPlace%2020.20%20Advocates">Regional WorkPlace 20.20 Advocates</option>
+				    <option value="Rental%20Supplemental%20Vehicles%20Program">Rental Supplemental Vehicles Program</option> 
+				    <option value="SDM%20Regional%20Program%20Managers">SDM Regional Program Managers</option>
+				    <option value="Security%20Engineering">Security Engineering</option>
+				    <option value="Seismic">Seismic</option>
+				    <option value="Small%20Business%20GWAC%20Center">Small Business GWAC Center</option>
+				    <option value="Small%20Business%20Support">Small Business Support</option>
+				    <option value="Telework">Telework</option>
+				    <option value="Transportation%20Policy">Transportation Policy</option>
+				    <option value="Transportation,%20Delivery%20and%20Relocation%20Solutions">Transportation, Delivery and Relocation Solutions</option>
+				    <option value="Travel%20and%20Transportation%20Training">Travel and Transportation Training</option>
+				    <option value="Travel%20Management%20Policy">Travel Management Policy</option>
+				    <option value="Travel%20Services%20Solutions">Travel Services Solutions</option>
+				</select>
+			</div>
+		</div>
+		<button id="groupSearch" class="btn btn-primary btn-large">Search</button>
+	</form>
+	<div id="results">
+	<!--<div>
+		<h4>Display Mode:</h4>
+		<div class="btn-group display-mode">
+			<button class="btn list active">List</button>
+			<button class="btn cards">Cards</button>
+		</div><br>
+	</div>-->
+	<div id="load"></div>
+	<h4 id="feedback" class="feedback"></h4>
+	<hr>
+	<ul class="addresses">
+		
+	</ul>
+	
+	
+	<!--<ul class="nav nav-tabs nav-stacked prevSearches">
+	<h4>Previous Searches:</h4>
+	</ul>-->
+</div>
+
+
+
+	</div>
+		
+		
+		
+	
+</div>
+		
+<br>
+	<div id="footer">
+	 		<ul id="footer_navigation">
+				<li><a href="/HP_11_Footer_help" title="Help"> Help </a></li>
+				<li><a href="/portal/site/map/" title="Sitemap"> Sitemap </a></li> 
+				<li><a href="/HP_11_Footer_accessibility" title="Accessibility Aids"> Accessibility Aids </a></li>
+				<li><a href="/HP_11_Footer_linking" title="Linking"> Linking </a></li> 
+				<li><a href="/HP_11_Footer_privacy" title="Privacy and Security"> Privacy and Security </a></li>
+				<li class="last"><a href="/HP_11_Footer_contactus#contactUsForm" title="Contact Us"> Contact Us </a></li>  
+			</ul>
+				<div id="footer_icon">
+				  	<span>Also of Interest:</span>
+				    <a href="/FTR_whitehouse"><img alt="icon of whitehouse.gov" style="border: none;" src="http://gsa.gov/resources/images/wh_homepage_icon.gif"></a>
+				    <a href="/HP_11_Footer_recovery"><img alt="icon of recovery.gov" style="border: none;" src="http://gsa.gov/resources/images/recover_homepage_icon.gif"></a>
+				    <a href="/HP_11_Footer_data"><img alt="icon of data.gov" style="border: none;" src="http://gsa.gov/resources/images/data_homepage_icon.gif"></a>
+				    <a href="/FTR_usagov"><img alt="icon of usa.gov" style="border: none;" src="http://gsa.gov/resources/images/usa_homepage_icon.gif"></a>				    
+				  	<a href="http://business.usa.gov/" onclick="_gaq.push(['_trackEvent','outbound','Click','business.usa.gov/']); "><img alt="icon of BusinessUSA.gov" style="border:none;" src="http://gsa.gov/resources/images/businessusagov_homepage_icon.gif"></a>
+				  </div>
+	</div>	
+	
+	
+		<!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2010 WebTrends Inc.  All rights reserved. -->
+<!-- Version: 8.6.2 -->
+<!-- Tag Builder Version: 3.0  -->
+<!-- Created: 6/22/2010 5:14:31 PM -->
+<script src="http://gsa.gov/resources/js/webtrends.js" type="text/javascript"></script>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+//]]>>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+&lt;div&gt;&lt;img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://sdc.gsa.gov/dcs9q5va4cxafpjsr2bgvxlzf_8u3k/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No&amp;amp;DCS.dcscfg=1&amp;amp;WT.tv=8.6.2"/&gt;&lt;/div&gt;
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+		<script language="JavaScript" src="http://gsa.gov/resources/js/foresee/foresee-trigger.js"> </script>	
+		<script type="text/javascript" src="http://dnn506yrbagrg.cloudfront.net/pages/scripts/0011/0536.js"> </script>
+	
+	
+	
+	<!-- Theme specific script files -->
+	
+	<!-- End: Theme specific script files -->
+		<!-- Layout specific script files -->
+		
+		<!-- End: Layout specific script files -->
+<!--  @buildlabel@ -->	
+<!-- app : ~kcgsa2app~~8022 -->		 
+				
+	</div>
+	
+	<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"gsa.gov" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+<div class="CID-wrap"></div></body></html>

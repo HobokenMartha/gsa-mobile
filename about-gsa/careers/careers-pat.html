@@ -1,0 +1,81 @@
+	
+<div id="careers">
+	<h1>Careers</h1>
+	<p>GSA is hiring! We have openings for accountants, contract specialists, IT professionals, attorneys and more. If it's about the business of government, it's about GSA.</p>
+	<p>To learn more and apply, <a href="http://usajobs.gov" target="_blank">visit USAJobs</a>.</p>
+	<p><a href="http://jobsearch.usajobs.gov/a9GSAALL.aspx" target="_blank">Visit USAJOBS to review current job openings</a>.</p>
+
+</div>
+
+<hr>
+<p>
+<script type="text/javascript">          
+//subroutine to extract the desired text
+function getTextOf(chunk,field){ 
+ chunk = chunk.replace(/\n/ig,""); chunk = chunk.replace(",",", ");
+ var wstart = chunk.search(field);
+ for (var x=0; x<chunk.length; x++){ if( chunk.charAt(wstart+x)==">"){ var startIndex=wstart+x+1; x=chunk.length; }}
+ for (var y=startIndex; y<chunk.length; y++){ if( chunk.charAt(y)=="<"){ var stopIndex=y; y=chunk.length; }}
+ chunk = chunk.substring(startIndex,stopIndex);
+ if (chunk.indexOf(";") > 0){chunk = chunk.substring(0,chunk.indexOf(";"));}
+ return chunk;
+}
+
+
+google.load("feeds","1");
+function initialize() {
+var feed = new google.feeds.Feed("http://gsa.usajobs.gov/JobSearch/Search/RSSFeed/2206734");
+feed.setNumEntries(200);  //<<<<<<< the number of entries to display
+feed.load(function(result) {
+if (!result.error) {
+ var container = document.getElementById("usajobsfeed");
+ for (var i = 0; i < result.feed.entries.length; i++) {  
+
+//create the name and link
+ var thisLink = document.createElement("a"); 
+ var entry = result.feed.entries[i];
+ var attributes = ["title", "link"]; 
+ thisLink.href = entry[attributes[1]]; 
+ //var ii = i+1; var jobitem = ii + "). " + entry[attributes[0]]; 
+ thisLink.appendChild(document.createTextNode( entry[attributes[0]] )); //or jobitem
+ var theThing = document.createElement("b"); 
+ theThing.appendChild(thisLink);
+
+//create the desc & format it
+ var thePara = document.createElement("p"); var desc = entry.content; var description;
+ desc = desc.replace("Year<br","&&&");desc = desc.replace(/<br>/ig,"\n");desc = desc.replace("&&&","Year<br");
+ description = "ANNOUNCEMENT: " + getTextOf(desc,"Job Announcement Number");
+   descnode = document.createTextNode(description);
+   thePara.appendChild(descnode);thePara.appendChild(document.createElement('br')); 
+ description = "LOCATION: " + getTextOf(desc,"Location Name");
+   descnode = document.createTextNode(description);
+   thePara.appendChild(descnode);thePara.appendChild(document.createElement('br'));
+ description = "SALARY: " + getTextOf(desc,"Salary");
+   descnode = document.createTextNode(description);
+   thePara.appendChild(descnode);thePara.appendChild(document.createElement('br'));
+ description = "APPLY: " + getTextOf(desc,"Opening Date") + " - " + getTextOf(desc,"Closing Date");
+   descnode = document.createTextNode(description);
+   thePara.appendChild(descnode);thePara.appendChild(document.createElement('hr'));
+ 
+//put it all together 
+ var div = document.createElement("div");
+ div.appendChild(theThing);
+ div.appendChild(thePara);
+ container.appendChild(div);
+    }
+   }
+  });
+ }
+ google.setOnLoadCallback(initialize);
+</script>
+<script src="http://www.google.com/uds/?file=feeds&amp;v=1" type="text/javascript"></script>
+<link href="http://www.google.com/uds/api/feeds/1.0/77f89919ef841f93359ce886504e4e3f/default+en.css" type="text/css" rel="stylesheet">
+<script src="http://www.google.com/uds/api/feeds/1.0/77f89919ef841f93359ce886504e4e3f/default+en.I.js" type="text/javascript"></script> 
+</p>
+
+<div id="usajobsfeed"></div>
+<noscript>
+&lt;p&gt;Javascript is required to view the jobs feed on this page. Click the link above to go to the source RSS feed page. &lt;/p&gt;
+</noscript>
+<p></p>
+</div>

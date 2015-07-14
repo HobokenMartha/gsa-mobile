@@ -1,0 +1,13 @@
+<div id="outbound">
+	<h1>You Are Being Redirected</h1>
+	<p>The page you requested is outside of blah blah blah.</p>
+	<h3><a id="destination"></a></h3>
+	<p>Be aware bloo blee bloo bloo blah.</p>
+	<script type="text/javascript">
+		$(function(){
+			var urlVar = window.location.href.split('?');
+			var dest = urlVar[1];
+			$('#destination').text(dest).attr('href',dest);
+		});
+	</script>
+</div>

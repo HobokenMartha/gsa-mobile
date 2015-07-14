@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Rate This Page Admin</title>
+	
+		<script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+		<script src="bootstrap.min.js" type="text/javascript"></script>
+		<script src="http://devastoweb.wip.gsa.gov/resources/js/gsaFeedback.js" type="text/javascript"></script>
+		<link href="bootstrap-container.css" rel="stylesheet">
+		<link href="gsaFeedback.css" rel="stylesheet">
+		<script type="text/javascript">
+			$(function(){
+				$('body').gsaFeedback({
+					'tabText': 'Example',
+			        'headerText': 'Was this page helpful?',
+			        'queryType' : 'oneFive', //or 'oneFive'
+			        'oneText' : 'Not at all helpful', //for 1-5 rating only
+			        'fiveText' : 'Very helpful', //for 1-5 rating only
+			        'commentText' : 'How can this page be improved? (optional)',
+			        'thankYouText' : 'Thank you!',
+			        'formAction' : 'https://docs.google.com/a/ogilvy.com/forms/d/1B_L480fVCUr1LtuR0EOjuBlOOzPxH8gLlHHr4zNGFuw/formResponse'
+				});
+				
+				$('#update').click(function(){
+					$('#form input').each(function(){
+						var val = $(this).val();
+						var placeholder = $(this).attr('placeholder');
+						if(val === ''){
+							$(this).val(placeholder);
+						}
+					});
+					if($('#form #nameAndEmail').val() === 'true'){
+						var nameEmailTF = true;
+					}
+					else{
+						var nameEmailTF = false;
+					}
+					$('#gsaFeedback').remove();
+					$('body').gsaFeedback({
+						'tabText': $('#form #tabText').val(),
+				        'headerText': $('#form #headerText').val(),
+				        'queryType' : $('#form #queryType').val(),
+				        'oneText' : $('#form #oneText').val(),
+				        'fiveText' : $('#form #fiveText').val(),
+				        'commentText' : $('#form #commentText').val(),
+				        'thankYouText' : $('#form #thankYouText').val(),
+				        'nameAndEmail' : nameEmailTF,
+				        'formAction' : $('#form #formAction').val()
+					});
+					$('#gsaFeedback .body').delay(1000).slideDown();
+					
+					var code = '<script type="text/javascript">$(function(){$("body").gsaFeedback({"tabText": "'
+						+$("#form #tabText").val()+'","headerText": "'
+						+$("#form #headerText").val()+'","queryType" : "'
+						+$("#form #queryType").val()+'","oneText" : "'
+						+$("#form #oneText").val()+'","fiveText" : "'
+						+$("#form #fiveText").val()+'","commentText" : "'
+						+$("#form #commentText").val()+'","thankYouText" : "'
+						+$("#form #thankYouText").val()+",nameAndEmail : +"
+						+nameEmailTF+',formAction" : "'
+						+createLink($("#form #formAction").val())
+						+'"});});'
+						+"<\/script>";
+					
+					function createLink(formAction){
+						if(formAction.indexOf('edit') > -1){
+							var split = formAction.split('edit');
+							var newURL = split[0]+'formResponse';
+							return newURL;
+						}
+						if(formAction.indexOf('formResponse') > -1){
+							return formAction;
+						}
+					}
+					
+					var cleanedCode = code.replace(/\t/g, '')+'>';
+					
+					$('#code').text(cleanedCode);
+					
+					return false;
+				});
+				$('#queryType').change(function(){
+					if($(this).val() === 'yesNo'){
+						$('#oneText,#fiveText').attr('disabled','disabled');
+					}
+					else{
+						$('#oneText,#fiveText').removeAttr('disabled');
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+<div id="wrapper" class="bootstrap" style="margin-bottom:50px;">
+<h1>Rate This Page Admin</h1>
+<br>
+<h2>Settings</h2>
+<form id="form" class="well">
+<div class="row-fluid">
+<div class="span6">
+<label>Tab Text</label>
+<input id="tabText" type="text" placeholder="Example">
+
+<label>Prompt</label>
+<input id="headerText" type="text" placeholder="Was this page helpful?">
+
+<label>Query Type</label>
+<select id="queryType">
+	<option value="oneFive">Rating 1-5</option>
+	<option value="yesNo">Yes or No</option>
+</select>
+
+<label>Low End</label>
+<input id="oneText" type="text" placeholder="Not at all helpful">
+
+<label>High End</label>
+<input id="fiveText" type="text" placeholder="Very helpful">
+
+</div>
+<div class="span6">
+
+<label>Request Name and Email?</label>
+<select id="nameAndEmail"><option value="false">No</option><option value="true">Yes</option></select>
+
+<label>Comments Prompt</label>
+<input id="commentText" type="text" placeholder="How can this page be improved? (optional)">
+
+<label>Thank You Text</label>
+<input id="thankYouText" type="text" placeholder="Thank You!">
+
+<label>Form Action URL (formAction)</label>
+<input id="formAction" type="text" placeholder="https://docs.google.com/a/ogilvy.com/forms/d/1B_L480fVCUr1LtuR0EOjuBlOOzPxH8gLlHHr4zNGFuw/formResponse">
+
+<button id="update" style="display:block;" class="btn btn-primary btn-large">Update</button>
+</div>
+</div>
+</form>
+<h2>Code Snippet</h2>
+<pre style="width:400px;height:auto;font-family:monospace;" id="code"></pre>
+</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<div id="admin">
+<h1>Admin</h1>
+<div class="cookie well">
+<h3>Mobile Forward Cookie</h3>
+<br>
+<div class="alert alert-info" id="forward-current"></div>
+<br>
+<div class="btn-group forward">
+  <button class="btn" id="m">Set Cookie to 'M'</button>
+  <button class="btn" id="www">Set Cookie to 'WWW'</button>
+  <button class="btn" id="remove">Remove Cookie</button>
+</div>
+<!--<h3>Mobile Survey Cookie</h3>
+<br>
+<div class="alert alert-info" id="survey-current"></div>
+<br>
+<div class="btn-group survey">
+  <button class="btn" id="completed">Set Cookie to 'Completed'</button>
+  <button class="btn" id="remove">Remove Cookie</button>
+</div>-->
+<h3>User Stats Cookie</h3>
+<br>
+<div class="alert alert-info" id="stats-current"></div>
+<br>
+<div class="btn-group stats">
+  <button class="btn" id="remove">Remove Cookie</button>
+</div>
+
+</div>
+<script type="text/javascript">
+	$(function(){
+	
+		//FORWARD COOKIE
+		
+		if($.cookie('gsaMobileForward') === 'm'){$('#forward-current').html('Cookie is set to "M"')}
+		if($.cookie('gsaMobileForward') === 'www'){$('#forward-current').html('Cookie is set to "WWW"')}
+		if($.cookie('gsaMobileForward') === undefined){$('#forward-current').html('No Cookie Found')}
+		
+		$('.forward #m').click(function(){
+			$.cookie('gsaMobileForward','m', { expires: 3650, path: '/', domain: '.gsa.gov' });
+			$('#forward-current').html('Cookie is set to "M"')
+		});
+		$('.forward #www').click(function(){
+			$.cookie('gsaMobileForward','www', { expires: 3650, path: '/', domain: '.gsa.gov' });
+			$('#forward-current').html('Cookie is set to "WWW"')
+		});
+		$('.forward #remove').click(function(){
+			$.removeCookie('gsaMobileForward', { path: '/', domain: '.gsa.gov' });
+			$('#forward-current').html('No Cookie Found.');
+		});
+		
+		//SURVEY COOKIE
+		/*
+		if($.cookie('gsaMobileSurvey') === undefined){$('#survey-current').html('No Cookie Found')}
+		else{$('#survey-current').html('Cookie is set to: '+$.cookie('gsaMobileSurvey'))}
+		
+		$('.survey #completed').click(function(){
+			$.cookie('gsaMobileSurvey','completed', { expires: 3650, path: '/', domain: '.gsa.gov' });
+			$('#survey-current').html('Cookie is set to "Completed"')
+		});
+		$('.survey #remove').click(function(){
+			$.removeCookie('gsaMobileSurvey', { path: '/', domain: '.gsa.gov' });
+			$('#survey-current').html('No Cookie Found.');
+		});*/
+		if($.cookie('gsaMobileUserStats') === undefined){
+			$('#stats-current').html('No Cookie Found');
+		}
+		else{
+			$('#stats-current').html('<strong>pageViews:</strong> '+userStats.pageViews+'<br>'+'<strong>externalLinks:</strong> '+userStats.externalLinks+'<br>'+'<strong>surveyStatus:</strong> '+userStats.survey.status+'<br>'+'<strong>userAgent:</strong> '+userStats.userAgent+'<br>');
+		}
+		$('.stats #remove').click(function(){
+			$.removeCookie('gsaMobileUserStats', { path: '/', domain: '.gsa.gov' });
+			$('#stats-current').html('No Cookie Found.');
+		});
+		
+	});
+</script>
+</div>

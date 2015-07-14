@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GSA AFR Charts</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<link rel="stylesheet" href="http://cloud.webtype.com/css/02ffa9a1-1199-4044-a5e9-476e2af8ec1f.css"/>
+		<link rel="stylesheet" href="style.css"/>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script src="http://gsa.gov/resources/js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/gvChart.js" type="text/javascript"></script>
+		<script src="js/mousewheel.js" type="text/javascript"></script>
+		<script src="js/hotkeys.js" type="text/javascript"></script>
+		<script type="text/javascript">gvChartInit();</script>
+		<script type="text/javascript" src="gsaCharts.js"></script>
+	</head>
+	<body>
+		<!--DATA-->
+		<div id="tableStaging">
+		</div>
+		
+		<!--PRESENTATION-->
+		<div id="chartApp" style="font-family:arial;">
+			<div id="loading">
+				<span>Javascript Error or No Javascript...</span>
+			</div>
+			<!--NAVIGATION-->
+			<div id="topNav">
+				<a id="2007" href="#">2007</a> <a id="2008" href="#">2008</a> <a id="2009" href="#">2009</a> <a id="2010" href="#">2010</a>  <a id="2011" href="#">2011</a> <a id="2012" href="#">2012</a> <span class="hint">[period/comma or scroll wheel]</span>
+			</div>
+			<div id="backNav">
+				<a href="#">Back</a>
+			</div>
+			<div id="sideNav">
+				<h3>Type</h3>
+				<ul class="type">
+					<li><a id="expenses" class="on" href="#">Expenses</a><span class="hint">[E]</span></li>
+					<li><a id="revenues" href="#">Revenues</a><span class="hint">[R]</span></li>
+					<li><a id="netCost" href="#">Net Cost</a><span class="hint">[C]</span></li>
+					<li><a id="assets" href="#">Assets</a><span class="hint">[A]</span></li>
+					<li><a id="liabilities" href="#">Liabilites</a><span class="hint">[L]</span></li>
+					<li><a id="netPosition" href="#">Net Position</a><span class="hint">[P]</span></li>
+				</ul>
+				<h3>Breakdown</h3>
+				<ul class="breakdown">
+					<li><a id="overTime" href="#">Over Time</a><span class="hint">[T]</span></li>
+					<li><a id="byFund" href="#">By Fund</a><span class="hint">[F]</span></li>
+				</ul>
+			</div>
+			<!--CONTENT-->
+			<div id="main">
+			</div>
+			<a href="#" id="hints">Keyboard Controls</a>
+		</div>
+	</body>
+</html>

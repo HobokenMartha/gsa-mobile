@@ -1,0 +1,150 @@
+<div id="survey">
+		<div class="prompt">
+			<h4>Please take a moment to give us feedback on GSA's Mobile site.</h4>
+			<br>
+			<div style="margin-top:10px">
+				<button class="btn btn-primary btn-large btn-block" id="yes">I'll give feedback now</button>
+				<button class="btn btn-block" id="later">Ask me later</button>
+				<button class="btn btn-block" id="never">No thanks</button>
+			</div>
+		</div>
+		<div class="survey" style="display:none">
+		<span class="closeSurvey">&#x2715;</span>
+		<br>
+			<h1>GSA Mobile Survey</h1>
+			<label><strong>Please rate your experience with GSA's mobile site:</strong></label>
+			<br>
+			<div class="rate">
+				<!--<span>Not at all Helpful</span>-->
+				<div class="btn-group" id="rating" data-toggle="buttons-radio">
+					<button class="btn">1</button>
+					<button class="btn">2</button>
+					<button class="btn">3</button>
+					<button class="btn">4</button>
+					<button class="btn">5</button>
+				</div>
+				<!--<span>Very Helpful</span>-->
+			</div>
+			<br>
+			<p>1 = Not at all Helpful<br>5 = Very Helpful</p>
+			<label><strong>How can the mobile site be improved?</strong></label>
+			<textarea id="improved"></textarea>
+			<div>
+				<button id="submit" class="btn btn-primary">Submit</button>
+				<button id="close" class="btn">Close</button>
+			</div>
+			<form style="display:none" method="POST" target="form-target" action="https://docs.google.com/forms/d/1Kt8JdNb1d4nmC1UZrIZADi1ysLY0jZQfzFrQN2mlfXE/formResponse">
+				<iframe src="#" id="form-target" name="form-target" style="width:0px; height:0px; border:0px;"></iframe>
+				<input type="hidden" class="rating" id="entry_1400972683" name="entry.1400972683">
+				<input type="hidden" class="improved" id="entry_518539143" name="entry.518539143">
+				<input type="hidden" class="referTitle" id="entry_1981341133" name="entry.1981341133">
+				<input type="hidden" class="referURL" id="entry_977630536" name="entry.977630536">
+				<input type="hidden" class="linkTitle" id="entry_603555157" name="entry.603555157">
+				<input type="hidden" class="linkURL" id="entry_689791594" name="entry.689791594">
+				<input type='hidden' name='draftResponse' value='[]'>
+				<input type='hidden' name='pageHistory' value='0'>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+</div>
+<div id="feedback" style="display:none;">
+	<h2>Thank you for taking the time to share your feedback.</h2>
+	<p>Continue to <a href="" target="_blank">the page you requested</a>.</p>
+</div>
+<script>
+$(function(){
+	satisfaction();
+});
+
+function satisfaction(){
+	var href = window.location.href;
+	if(href.indexOf('?') === -1){
+		window.location.href = '/m';
+	}
+	else{
+		var hrefSplit = href.split('/#/survey?');
+		var vars = hrefSplit[1].split('&');
+		
+		var firstPrompt = 3;
+		var secondPrompt = 10;
+		
+		var linkTitle = vars[0].replace(/%20/g,' ').replace(/\$/g,'&'),
+			linkURL = vars[1].replace(/%23/g,'#').replace(/%20/g,' ').replace(/\$/g,'&'),
+			referTitle = vars[2].replace(/%20/g,' ').replace(/\$/g,'&').replace(/%23/g,'#'),
+			referURL = vars[3];
+		
+		$('#survey form .referTitle').val(referTitle);
+		$('#survey form .referURL').val(referURL);
+		$('#survey form .linkTitle').val(linkTitle);
+		$('#survey form .linkURL').val(linkURL);
+		
+		$('#survey .closeSurvey,#survey #close').attr('href',linkURL)
+			.on('click',function(){
+				window.location.href = mRoot + '/' + $(this).attr('href');
+				userStats.survey.counter = firstPrompt;
+				$.cookie('gsaMobileUserStats',JSON.stringify(userStats), { expires: 3650, path: '/', domain: '.gsa.gov' });
+		});
+		
+		if(referTitle === 'Site Feedback'){
+			$('#survey .prompt').hide();
+			$('#survey .survey').show();
+		}
+		
+		$('#survey #never').click(function(){
+			
+			userStats.survey.status = 'never';
+			userStats.survey.counter = 0;
+			$.cookie('gsaMobileUserStats',JSON.stringify(userStats), { expires: 3650, path: '/', domain: '.gsa.gov' });
+			$('body').removeClass('greyed');
+			window.location.href = linkURL;
+			
+		});
+		
+		$('#survey #later').click(function(){
+			userStats.survey.counter = firstPrompt;
+			$.cookie('gsaMobileUserStats',JSON.stringify(userStats), { expires: 3650, path: '/', domain: '.gsa.gov' });
+			$('body').removeClass('greyed');
+			window.location.href = linkURL;
+		});
+	
+		$('#survey #yes').click(function(){
+			//resets the counter in case survey is not completed
+			userStats.survey.counter = firstPrompt;
+			$.cookie('gsaMobileUserStats',JSON.stringify(userStats), { expires: 3650, path: '/', domain: '.gsa.gov' });
+			$('#survey .prompt').hide();
+			$('#survey .survey').show();
+		});
+		
+		$('#survey #submit').click(function(){
+		
+			var rating = $('#survey #rating .active').text(),
+				improved = $('#survey #improved').val();
+				
+			$('#survey form .rating').val(rating);
+			$('#survey form .improved').val(improved);
+			$('#survey form input[type=submit]').click();
+			_gaq.push(['_trackEvent', 'Satisfaction Survey', 'Completed']);
+			//$.cookie('gsaMobileSurvey','completed', { expires: 3650, path: '/', domain: '.gsa.gov' });
+			userStats.surveyStatus = 'completed';
+			$.cookie('gsaMobileUserStats',JSON.stringify(userStats), { expires: 3650, path: '/', domain: '.gsa.gov' });
+			
+			setTimeout(function(){
+				window.location.href = linkURL;
+				$('body').removeClass('greyed');
+			},5000);
+			
+			setTimeout(function(){
+				$('#survey').hide();
+				$('#feedback a').attr('href',linkURL).text(linkTitle);
+				$('#feedback').show();
+			},1000);	
+		});
+		$('#survey #cancel').click(function(){
+			_gaq.push(['_trackEvent', 'Satisfaction Survey', 'Cancelled']);
+			setTimeout(function(){
+				window.location.href = linkURL;
+			},1000);
+		});
+	}
+}
+</script>

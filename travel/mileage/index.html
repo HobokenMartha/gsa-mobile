@@ -1,0 +1,132 @@
+<div id="mileage-rate">
+	<h1>Mileage Rate</h1>
+		<div class="row-fluid">
+			<h4>Mileage Rate</h4>
+				<div id="mileage-table-container" class="ajax load" data-url="/portal/content/100715" data-selector="#mileage-table">
+				  <!--<table class="table table-striped table-condensed">
+					<thead>
+						<tr>
+							<th scope="col" width="65%">Modes of Transportation</th>
+							<th scope="col" width="33%">Rate Per Mile</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td scope="row">If use of privately owned vehicle (POV) is authorized or if no Government owned vehicle is available</td>
+							<td>$0.575</td>
+						</tr>
+						<tr>
+							<td scope="row">If Government-owned automobile is available</td>
+							<td>$0.23</td>
+						</tr>
+						<tr>
+							<td scope="row">Motorcycle</td>
+							<td>$0.545</td>
+						</tr>
+						<tr>
+							<td scope="row">Airplane *</td>
+							<td>$1.29</td>
+						</tr>
+						<tr>
+							<td scope="row" colspan="2"><small>Note: IRS and GSA do not necessarily have the same rate.</small></td>
+						</tr>
+					</tbody>
+				  </table>-->
+				</div>
+			<h4>Mileage Reimbursement Calculator</h4>
+				<form action="" id="povform" class="well" onsubmit="return false;">
+					<label for="mile">Mileage:</label>
+						<input id="mile" name="mile" type="number" value="mileage" placeholder="Put mileage here">						 
+					<label for="mode">Vehicle Type:</label>
+						<select id="mode" name="mode">
+							<option value="None">Select Transportation</option>
+							<option value="pov">Private Vehicle</option>
+							<option value="gov">Govt Vehicle</option>
+							<option value="moto">Motorcycle</option>
+							<option value="air">Airplane</option>
+						</select>
+						<br>
+						<button class="btn btn-primary btn-large" onclick="calculateTotal()">Calculate Reimbursement</button>
+					<div id="totalPrice"></div>
+				</form>	
+			<p>QUESTIONS:	For all travel policy questions, email <a href="mailto:travelpolicy@gsa.gov">travelpolicy@gsa.gov</a></p>
+			<div class="alert alert-warning">
+				<a class="additionalTerms" href="#">* Airplane Information</a>
+				<div id="additionalTerms">
+					<br>
+					<p>Airplane nautical miles (NMs) should be converted into statute miles (SMs) or regular miles when submitting a voucher using the formula (1 NM equals 1.15077945 SMs). You can also use the link to <a href="http://boatsafe.com" target="_blank">BoatSafe.com</a> (a non-government website) to assist you in converting NMs to SMs or SMs to NMs.</p>
+				</div>
+			</div>
+			
+			<ul class="nav nav-tabs nav-stacked">
+				<li><a href="#!/travel/perdiem"><i class="icon-chevron-right"></i>Per Diem</a></li>
+				<li><a href="#!/portal/content/101518"><i class="icon-chevron-right"></i>M&IE Breakdown</a></li>
+				<li><a href="#!/travel/airfares"><i class="icon-chevron-right"></i>Airfare</a></li>
+				<li><a href="#!/travel/fleet"><i class="icon-chevron-right"></i>Fleet Vehicles</a></li>
+				<li><a href="#!/travel/resources"><i class="icon-chevron-right"></i>Travel Resources</a></li>
+			</ul>
+		</div>
+</div> 
+
+<script type="text/javascript">
+//Set up an associative array 
+ var mode_rate= new Array();
+ mode_rate["None"]=0;
+ mode_rate["pov"]=0.56;
+ mode_rate["gov"]=0.235;
+ mode_rate["moto"]=0.53;
+ mode_rate["air"]=1.31;
+
+
+function getMileage()
+{  
+    //Get a reference to the form id="povform"
+    var theForm = document.forms["povform"];
+    var mileinput = theForm.elements["mile"];
+    var howmanymile =0;
+    if(mileinput.value!="")
+    	{
+        howmanymile = parseInt(mileinput.value);
+        }
+    return howmanymile;
+}
+
+
+function getTransportationRate()
+{
+    var TransportationRate=0;
+    //Get a reference to the form id="povform"
+    var theForm = document.forms["povform"];
+    //Get a reference to the select id="mode"
+     var selectedMode = theForm.elements["mode"];
+     
+    TransportationRate = mode_rate[selectedMode.value];
+
+    return TransportationRate;
+}
+
+
+        
+function calculateTotal()
+{
+    //Here we get the total price by calling our function
+    //Each function returns a number so by calling them we add the values they return together
+    var mileageRate =  getMileage() * getTransportationRate();
+	
+	mileageRate = (Math.round(mileageRate * 100) / 100).toFixed(2);
+	
+    
+    //display the result
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='block';
+    divobj.innerHTML = "<div class='alert alert-success'>Your estimated mileage reimbursement is:<br> <span style='font-weight:bold; font-size:28px; display:block; padding-top: 5px;'>$"+mileageRate+"</span></div>";
+}
+
+
+function hideTotal()
+{
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='none';
+}
+</script>
+</div>

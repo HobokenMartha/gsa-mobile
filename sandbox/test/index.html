@@ -1,0 +1,2258 @@
+<div id="contact-gsa">
+<h1>Airfares</h1>
+<p>City Pairs leverages the buying power of the federal government to price airline tickets approximately 70 percent below commercial market airfares.</p>
+<form action="http://apps.fas.gsa.gov/citypairs/search/index.cfm?RequestTimeout=2000" NAME="dropdowns" onsubmit="return checkOrigDest();"  >
+	
+<script language="javascript" type="text/javascript">
+ function checkOrigDest()
+ {
+ 	 var dep_from=document.getElementById("departing_from").value;
+     var dep_from1=document.getElementById("departing_from1").value;
+     var arriv_to=document.getElementById("arriving_to").value;
+	 var arriv_to1=document.getElementById("arriving_to1").value;
+	 
+	 var patt1 = new RegExp("^[ a-zA-Z]+$");  
+
+//	 alert(dep_from.match(patt1));
+//	 alert(dep_from1.match(patt1));
+
+	 
+	 if (	dep_from != '' &&  dep_from1 != '' )
+	 	{
+			alert('Please select or enter just one Departure city/airport code');
+       		return false;
+		}
+
+	 if (	arriv_to != '' &&  arriv_to1 != '' )
+	 	{
+			alert('Please select or enter just one Arrival city/airport code');
+       		return false;
+		}
+
+//	 var patt1 = new RegExp("^[ a-zA-Z]+$");  
+
+//	 alert(dep_from.match(patt1));
+//   alert(dep_from1.match(patt1));
+     
+     if ( (dep_from != '' && dep_from.search(patt1) == -1 )  || ( arriv_to != '' && arriv_to.search(patt1) == -1 ) )
+      {
+          // something is wrong
+       alert('Please enter alphabetical characters for the Origin and/or Destination');
+       return false;
+      }
+//      else
+//      {
+//         alert('todo fino');
+//      }
+	  
+//	 if (	document.getElementById("departing_from1").value != ''  )	
+//	 	{
+//			document.getElementById("departing_from").value = document.getElementById("departing_from1").value;
+//			var dep_from = document.getElementById("departing_from1").value
+//		}
+	
+//	 if (	document.getElementById("arriving_to1").value != ''  )	
+//	 	{
+//			document.getElementById("arriving_to").value = document.getElementById("arriving_to1").value;
+//			var dep_from = document.getElementById("arriving_to1").value
+//		}
+	  
+      return true; 
+ }
+ 
+</script>
+
+<script language="javascript" type="text/javascript">
+	function WinOpen(url,x,y,name) {
+		var options = "toolbar=no,scrollbars=yes,resizable=yes,top=75, left=250,width=" + x + ",height=" + y;
+		msgWindow=window.open(url,name,options);
+	}
+</script>
+	
+	
+<div class="alert alert-warning">
+						<p><span style="color:red; font-weight:bold">Note:</span> Information must be provided for at least one of the form fields below.
+						<br>For domestic routes, please use the airport code. City codes (e.g., Washington(WAS)) are for use with international routes. <br>
+						
+  						FY13 contract fares are provided for information purposes and will be available for reservations during FY13 (October 1, 2012 - September 30, 2013).					
+							</p>
+</div>
+
+<div>
+					<select name="departing_from1" id="departing_from1">
+						<option value="">Choose a Departure City
+						
+							<option value="ABR">ABERDEEN, SD [ABR]
+						
+							<option value="ABJ">ABIDJAN, COTE D'IVOIRE [ABJ]
+						
+							<option value="ABI">ABILENE, TX [ABI]
+						
+							<option value="AUH">ABU DHABI, UNITED ARAB EMIRATES [AUH]
+						
+							<option value="ABV">ABUJA, NIGERIA [ABV]
+						
+							<option value="ACC">ACCRA, GHANA [ACC]
+						
+							<option value="ADD">ADDIS ABABA, ETHIOPIA [ADD]
+						
+							<option value="ADL">ADELAIDE, S. AUSTRALIA, AUSTRALIA [ADL]
+						
+							<option value="BQN">AGUADILLA, PR [BQN]
+						
+							<option value="AGU">AGUASCALIENTES, MEXICO [AGU]
+						
+							<option value="CAK">AKRON, OH [CAK]
+						
+							<option value="ABY">ALBANY, GA [ABY]
+						
+							<option value="ALB">ALBANY, NY [ALB]
+						
+							<option value="ABQ">ALBUQUERQUE, NM [ABQ]
+						
+							<option value="AEX">ALEXANDRIA, LA [AEX]
+						
+							<option value="ABE">ALLENTOWN, PA [ABE]
+						
+							<option value="ALA">ALMATY, KAZAKHSTAN [ALA]
+						
+							<option value="APN">ALPENA, MI [APN]
+						
+							<option value="AOO">ALTOONA, PA [AOO]
+						
+							<option value="AMA">AMARILLO, TX [AMA]
+						
+							<option value="AMM">AMMAN, JORDAN [AMM]
+						
+							<option value="AMS">AMSTERDAM, NETHERLANDS [AMS]
+						
+							<option value="ANC">ANCHORAGE, AK [ANC]
+						
+							<option value="ANK">ANKARA, TURKEY [ANK]
+						
+							<option value="ANU">ANTIGUA, LEEWARD ISLANDS [ANU]
+						
+							<option value="ATW">APPLETON, WI [ATW]
+						
+							<option value="ACV">ARCATA/EUREKA, CA [ACV]
+						
+							<option value="AUA">ARUBA, ARUBA [AUA]
+						
+							<option value="AVL">ASHEVILLE, NC [AVL]
+						
+							<option value="ASE">ASPEN, CO [ASE]
+						
+							<option value="ATH">ATHENS, GREECE [ATH]
+						
+							<option value="ATL">ATLANTA, GA [ATL]
+						
+							<option value="ACY">ATLANTIC CITY, NJ [ACY]
+						
+							<option value="AKL">AUCKLAND, NEW ZEALAND [AKL]
+						
+							<option value="AGS">AUGUSTA, GA [AGS]
+						
+							<option value="AUS">AUSTIN, TX [AUS]
+						
+							<option value="BAH">BAHRAIN, BAHRAIN [BAH]
+						
+							<option value="BFL">BAKERSFIELD, CA [BFL]
+						
+							<option value="BKO">BAMAKO, MALI [BKO]
+						
+							<option value="BLR">BANGALORE, INDIA [BLR]
+						
+							<option value="BKK">BANGKOK, THAILAND [BKK]
+						
+							<option value="BGR">BANGOR, ME [BGR]
+						
+							<option value="BHB">BAR HARBOR, ME [BHB]
+						
+							<option value="BGI">BARBADOS, BARBADOS [BGI]
+						
+							<option value="BCN">BARCELONA, SPAIN [BCN]
+						
+							<option value="BRW">BARROW, AK [BRW]
+						
+							<option value="BTR">BATON ROUGE, LA [BTR]
+						
+							<option value="BPT">BEAUMONT-PORT ARTHUR, TX [BPT]
+						
+							<option value="BKW">BECKLEY, WV [BKW]
+						
+							<option value="BJS">BEIJING, CHINA [BJS]
+						
+							<option value="BFS">BELFAST, N. IRELAND [BFS]
+						
+							<option value="BEG">BELGRADE, YUGOSLAVIA [BEG]
+						
+							<option value="BZE">BELIZE CITY, BELIZE [BZE]
+						
+							<option value="BLI">BELLINGHAM, WA [BLI]
+						
+							<option value="BJI">BEMIDJI, MN [BJI]
+						
+							<option value="BGO">BERGEN, NORWAY [BGO]
+						
+							<option value="BER">BERLIN, GERMANY [BER]
+						
+							<option value="BDA">BERMUDA, BERMUDA [BDA]
+						
+							<option value="BET">BETHEL, AK [BET]
+						
+							<option value="BIL">BILLINGS, MT [BIL]
+						
+							<option value="BGM">BINGHAMTON, NY [BGM]
+						
+							<option value="BHX">BIRMINGHAM, ENGLAND UK [BHX]
+						
+							<option value="BHM">BIRMINGHAM, AL [BHM]
+						
+							<option value="BIS">BISMARCK, ND [BIS]
+						
+							<option value="BMI">BLOOMINGTON, IL [BMI]
+						
+							<option value="BOG">BOGOTA, COLOMBIA [BOG]
+						
+							<option value="BOI">BOISE, ID [BOI]
+						
+							<option value="BOM">BOMBAY, INDIA [BOM]
+						
+							<option value="BOS">BOSTON, MA [BOS]
+						
+							<option value="BZN">BOZEMAN, MT [BZN]
+						
+							<option value="BRD">BRAINERD, MN [BRD]
+						
+							<option value="BSB">BRASILIA, BRAZIL [BSB]
+						
+							<option value="BZV">BRAZZAVILLE, CONGO [BZV]
+						
+							<option value="BRE">BREMEN, GERMANY [BRE]
+						
+							<option value="BNE">BRISBANE, QUEENSLAND, AUSTRALIA [BNE]
+						
+							<option value="BRS">BRISTOL, UNITED KINGDOM [BRS]
+						
+							<option value="BRO">BROWNSVILLE, TX [BRO]
+						
+							<option value="BQK">BRUNSWICK, GA [BQK]
+						
+							<option value="BRU">BRUSSELS, BELGIUM [BRU]
+						
+							<option value="BUH">BUCHAREST, ROMANIA [BUH]
+						
+							<option value="BUD">BUDAPEST, HUNGARY [BUD]
+						
+							<option value="BUE">BUENOS AIRES, ARGENTINA [BUE]
+						
+							<option value="BUF">BUFFALO, NY [BUF]
+						
+							<option value="BTV">BURLINGTON, VT [BTV]
+						
+							<option value="BTM">BUTTE, MT [BTM]
+						
+							<option value="CAI">CAIRO, EGYPT [CAI]
+						
+							<option value="YYC">CALGARY, ALBERTA, CANADA [YYC]
+						
+							<option value="CLO">CALI, COLOMBIA [CLO]
+						
+							<option value="CBR">CANBERRA, AUST. CAP. TERR., AUSTRALIA [CBR]
+						
+							<option value="CUN">CANCUN, MEXICO [CUN]
+						
+							<option value="CPT">CAPE TOWN, SOUTH AFRICA [CPT]
+						
+							<option value="CCS">CARACAS, VENEZUELA [CCS]
+						
+							<option value="CLD">CARLSBAD, CA [CLD]
+						
+							<option value="CAS">CASABLANCA, MOROCCO [CAS]
+						
+							<option value="CPR">CASPER, WY [CPR]
+						
+							<option value="CTA">CATANIA, ITALY [CTA]
+						
+							<option value="CDC">CEDAR CITY, UT [CDC]
+						
+							<option value="CID">CEDAR RAPIDS, IA [CID]
+						
+							<option value="CMI">CHAMPAIGN, IL [CMI]
+						
+							<option value="CHQ">CHANIA, GREECE [CHQ]
+						
+							<option value="CHS">CHARLESTON, SC [CHS]
+						
+							<option value="CRW">CHARLESTON, WV [CRW]
+						
+							<option value="CLT">CHARLOTTE, NC [CLT]
+						
+							<option value="CHO">CHARLOTTESVILLE, VA [CHO]
+						
+							<option value="CHA">CHATTANOOGA, TN [CHA]
+						
+							<option value="MAA">CHENNAI, INDIA [MAA]
+						
+							<option value="CYS">CHEYENNE, WY [CYS]
+						
+							<option value="CHI">CHICAGO, IL [CHI]
+						
+							<option value="MDW">CHICAGO, IL [MDW]
+						
+							<option value="ORD">CHICAGO, IL [ORD]
+						
+							<option value="CIC">CHICO, CA [CIC]
+						
+							<option value="HIB">CHISHOLM, MN [HIB]
+						
+							<option value="CVG">CINCINNATI, OH [CVG]
+						
+							<option value="CME">CIUDAD DEL CARMEN, MEXICO [CME]
+						
+							<option value="CKB">CLARKSBURG, WV [CKB]
+						
+							<option value="CLE">CLEVELAND, OH [CLE]
+						
+							<option value="COD">CODY, WY [COD]
+						
+							<option value="CLL">COLLEGE STATION, TX [CLL]
+						
+							<option value="CGN">COLOGNE, GERMANY [CGN]
+						
+							<option value="COS">COLORADO SPRINGS, CO [COS]
+						
+							<option value="COU">COLUMBIA, MO [COU]
+						
+							<option value="CAE">COLUMBIA, SC [CAE]
+						
+							<option value="CSG">COLUMBUS, GA [CSG]
+						
+							<option value="GTR">COLUMBUS, MS [GTR]
+						
+							<option value="CMH">COLUMBUS, OH [CMH]
+						
+							<option value="CPH">COPENHAGEN, DENMARK [CPH]
+						
+							<option value="CDV">CORDOVA, AK [CDV]
+						
+							<option value="CRP">CORPUS CHRISTI, TX [CRP]
+						
+							<option value="COO">COTONOU, BENIN [COO]
+						
+							<option value="CEC">CRESCENT CITY, CA [CEC]
+						
+							<option value="CUR">CURACAO, NETHERLANDS ANTILLES [CUR]
+						
+							<option value="DKR">DAKAR, SENEGAL [DKR]
+						
+							<option value="DAL">DALLAS-FT. WORTH, TX [DAL]
+						
+							<option value="DFW">DALLAS-FT. WORTH, TX [DFW]
+						
+							<option value="DAR">DAR ES SALAAM, TANZANIA [DAR]
+						
+							<option value="DAY">DAYTON, OH [DAY]
+						
+							<option value="DAB">DAYTONA BEACH, FL [DAB]
+						
+							<option value="DEL">DELHI, INDIA [DEL]
+						
+							<option value="DEN">DENVER, CO [DEN]
+						
+							<option value="DSM">DES MOINES, IA [DSM]
+						
+							<option value="DTW">DETROIT, MI [DTW]
+						
+							<option value="DVL">DEVIL'S LAKE, ND [DVL]
+						
+							<option value="DLG">DILLINGHAM, AK [DLG]
+						
+							<option value="DOH">DOHA, QATAR [DOH]
+						
+							<option value="DOM">DOMINICA, DOMINICA [DOM]
+						
+							<option value="DHN">DOTHAN, AL [DHN]
+						
+							<option value="DLA">DOUALA, CAMEROON [DLA]
+						
+							<option value="DRS">DRESDEN, GERMANY [DRS]
+						
+							<option value="DXB">DUBAI, UNITED ARAB EMIRATES [DXB]
+						
+							<option value="DUB">DUBLIN, IRELAND [DUB]
+						
+							<option value="DBQ">DUBUQUE, IA [DBQ]
+						
+							<option value="DLH">DULUTH, MN [DLH]
+						
+							<option value="DRO">DURANGO, CO [DRO]
+						
+							<option value="DUS">DUSSELDORF, GERMANY [DUS]
+						
+							<option value="DUT">DUTCH HARBOR, AK [DUT]
+						
+							<option value="EAU">EAU CLAIRE, WI [EAU]
+						
+							<option value="EDI">EDINBURGH, SCOTLAND UK [EDI]
+						
+							<option value="YEA">EDMONTON, ALBERTA, CANADA [YEA]
+						
+							<option value="ELP">EL PASO, TX [ELP]
+						
+							<option value="EKO">ELKO, NV [EKO]
+						
+							<option value="ELM">ELMIRA, NY [ELM]
+						
+							<option value="EBB">ENTEBBE, UGANDA [EBB]
+						
+							<option value="ERI">ERIE, PA [ERI]
+						
+							<option value="EUG">EUGENE, OR [EUG]
+						
+							<option value="EVV">EVANSVILLE, IN [EVV]
+						
+							<option value="FAI">FAIRBANKS, AK [FAI]
+						
+							<option value="FAR">FARGO, ND [FAR]
+						
+							<option value="FYV">FAYETTEVILLE, AR [FYV]
+						
+							<option value="XNA">FAYETTEVILLE, AR [XNA]
+						
+							<option value="FAY">FAYETTEVILLE, NC [FAY]
+						
+							<option value="FLG">FLAGSTAFF, AZ [FLG]
+						
+							<option value="FNT">FLINT, MI [FNT]
+						
+							<option value="FLR">FLORENCE, ITALY [FLR]
+						
+							<option value="FLO">FLORENCE, SC [FLO]
+						
+							<option value="FMY">FORT MYERS, FL [FMY]
+						
+							<option value="FRA">FRANKFURT, GERMANY [FRA]
+						
+							<option value="FPO">FREEPORT, BAHAMAS [FPO]
+						
+							<option value="FAT">FRESNO, CA [FAT]
+						
+							<option value="FLL">FT. LAUDERDALE, FL [FLL]
+						
+							<option value="RSW">FT. MYERS, FL [RSW]
+						
+							<option value="FSM">FT. SMITH, AR [FSM]
+						
+							<option value="VPS">FT. WALTON BEACH, FL [VPS]
+						
+							<option value="FWA">FT. WAYNE, IN [FWA]
+						
+							<option value="FUK">FUKUOKA, JAPAN [FUK]
+						
+							<option value="GNV">GAINESVILLE, FL [GNV]
+						
+							<option value="GVA">GENEVA, SWITZERLAND [GVA]
+						
+							<option value="GGT">GEORGE TOWN, BAHAMAS [GGT]
+						
+							<option value="GEO">GEORGETOWN, GUYANA [GEO]
+						
+							<option value="GCC">GILLETTE, WY [GCC]
+						
+							<option value="GLA">GLASGOW, SCOTLAND UK [GLA]
+						
+							<option value="GCM">GRAND CAYMAN ISLAND, CAYMAN ISLANDS [GCM]
+						
+							<option value="GFK">GRAND FORKS, ND [GFK]
+						
+							<option value="GJT">GRAND JUNCTION, CO [GJT]
+						
+							<option value="GRR">GRAND RAPIDS, MI [GRR]
+						
+							<option value="GTF">GREAT FALLS, MT [GTF]
+						
+							<option value="GRB">GREEN BAY, WI [GRB]
+						
+							<option value="GSO">GREENSBORO, NC [GSO]
+						
+							<option value="GLH">GREENVILLE, MS [GLH]
+						
+							<option value="GSP">GREENVILLE, SC [GSP]
+						
+							<option value="GDL">GUADALAJARA, MEXICO [GDL]
+						
+							<option value="GUM">GUAM, GUAM [GUM]
+						
+							<option value="CAN">GUANGZHOU, CHINA [CAN]
+						
+							<option value="GUA">GUATEMALA CITY, GUATEMALA [GUA]
+						
+							<option value="GYE">GUAYAQUIL, ECUADOR [GYE]
+						
+							<option value="GPT">GULFPORT, MS [GPT]
+						
+							<option value="YHZ">HALIFAX, NOVA SCOTIA, CANADA [YHZ]
+						
+							<option value="HAM">HAMBURG, GERMANY [HAM]
+						
+							<option value="CMX">HANCOCK, MI [CMX]
+						
+							<option value="HAN">HANOI, VIETNAM [HAN]
+						
+							<option value="HRL">HARLINGEN, TX [HRL]
+						
+							<option value="MDT">HARRISBURG, PA [MDT]
+						
+							<option value="BDL">HARTFORD, CT [BDL]
+						
+							<option value="HLN">HELENA, MT [HLN]
+						
+							<option value="HEL">HELSINKI, FINLAND [HEL]
+						
+							<option value="HMO">HERMOSILLO, MEXICO [HMO]
+						
+							<option value="ITO">HILO, HI [ITO]
+						
+							<option value="HHH">HILTON HEAD ISLAND, SC [HHH]
+						
+							<option value="HIJ">HIROSHIMA, JAPAN [HIJ]
+						
+							<option value="SGN">HO CHI MINH CITY, VIET NAM [SGN]
+						
+							<option value="HOB">HOBBS, NM [HOB]
+						
+							<option value="HKG">HONG KONG, CHINA [HKG]
+						
+							<option value="HNL">HONOLULU, HI [HNL]
+						
+							<option value="HOU">HOUSTON, TX [HOU]
+						
+							<option value="IAH">HOUSTON, TX [IAH]
+						
+							<option value="HTS">HUNTINGTON, WV [HTS]
+						
+							<option value="HSV">HUNTSVILLE, AL [HSV]
+						
+							<option value="IDA">IDAHO FALLS, ID [IDA]
+						
+							<option value="IPL">IMPERIAL, CA [IPL]
+						
+							<option value="IND">INDIANAPOLIS, IN [IND]
+						
+							<option value="INL">INTERNATIONAL FALLS, MN [INL]
+						
+							<option value="IYK">INYOKERN, CA [IYK]
+						
+							<option value="ISP">ISLIP, NY [ISP]
+						
+							<option value="IST">ISTANBUL, TURKEY [IST]
+						
+							<option value="ITH">ITHACA, NY [ITH]
+						
+							<option value="JAN">JACKSON, MS [JAN]
+						
+							<option value="JAC">JACKSON HOLE, WY [JAC]
+						
+							<option value="JAX">JACKSONVILLE, FL [JAX]
+						
+							<option value="OAJ">JACKSONVILLE, NC [OAJ]
+						
+							<option value="JKT">JAKARTA, INDONESIA [JKT]
+						
+							<option value="JMS">JAMESTOWN, ND [JMS]
+						
+							<option value="JNB">JOHANNESBURG, SOUTH AFRICA [JNB]
+						
+							<option value="JST">JOHNSTOWN, PA [JST]
+						
+							<option value="JNU">JUNEAU, AK [JNU]
+						
+							<option value="OGG">KAHULUI, HI [OGG]
+						
+							<option value="AZO">KALAMAZOO, MI [AZO]
+						
+							<option value="FCA">KALISPELL, MT [FCA]
+						
+							<option value="MCI">KANSAS CITY, MO [MCI]
+						
+							<option value="LIH">KAUAI, HI [LIH]
+						
+							<option value="KTN">KETCHIKAN, AK [KTN]
+						
+							<option value="EYW">KEY WEST, FL [EYW]
+						
+							<option value="IEV">KIEV, UKRAINE [IEV]
+						
+							<option value="KGL">KIGALI, RWANDA [KGL]
+						
+							<option value="JRO">KILIMANJARO, TANZANIA [JRO]
+						
+							<option value="GRK">KILLEEN GRAY AAF, TX [GRK]
+						
+							<option value="AKN">KING SALMON, AK [AKN]
+						
+							<option value="KIN">KINGSTON, JAMAICA [KIN]
+						
+							<option value="LMT">KLAMATH FALLS, OR [LMT]
+						
+							<option value="TYS">KNOXVILLE, TN [TYS]
+						
+							<option value="ADQ">KODIAK, AK [ADQ]
+						
+							<option value="KOA">KONA, HI [KOA]
+						
+							<option value="ROR">KOROR, PALAU [ROR]
+						
+							<option value="OTZ">KOTZEBUE, AK [OTZ]
+						
+							<option value="KRK">KRAKOW, POLAND [KRK]
+						
+							<option value="KWI">KUWAIT, KUWAIT [KWI]
+						
+							<option value="LSE">LA CROSSE, WI [LSE]
+						
+							<option value="LPB">LA PAZ, BOLIVIA [LPB]
+						
+							<option value="LFT">LAFAYETTE, LA [LFT]
+						
+							<option value="LOS">LAGOS, NIGERIA [LOS]
+						
+							<option value="LCH">LAKE CHARLES, LA [LCH]
+						
+							<option value="LAN">LANSING, MI [LAN]
+						
+							<option value="LRD">LAREDO, TX [LRD]
+						
+							<option value="LAS">LAS VEGAS, NV [LAS]
+						
+							<option value="PIB">LAUREL, MS [PIB]
+						
+							<option value="LAW">LAWTON, OK [LAW]
+						
+							<option value="LBA">LEEDS/BRADFORD, ENGLAND UK [LBA]
+						
+							<option value="BJX">LEON/GUANAJUATO, MEXICO [BJX]
+						
+							<option value="LWS">LEWISTON, ID [LWS]
+						
+							<option value="LEX">LEXINGTON, KY [LEX]
+						
+							<option value="LIR">LIBERIA, COSTA RICA [LIR]
+						
+							<option value="LIM">LIMA, PERU [LIM]
+						
+							<option value="LNK">LINCOLN, NE [LNK]
+						
+							<option value="LIS">LISBON, PORTGUAL [LIS]
+						
+							<option value="LIT">LITTLE ROCK, AR [LIT]
+						
+							<option value="LON">LONDON, ENGLAND UK [LON]
+						
+							<option value="GGG">LONGVIEW, TX [GGG]
+						
+							<option value="BUR">LOS ANGELES, CA [BUR]
+						
+							<option value="LAX">LOS ANGELES, CA [LAX]
+						
+							<option value="LGB">LOS ANGELES, CA [LGB]
+						
+							<option value="ONT">LOS ANGELES, CA [ONT]
+						
+							<option value="SJD">LOS CABOS, MEXICO [SJD]
+						
+							<option value="SDF">LOUISVILLE, KY [SDF]
+						
+							<option value="LBB">LUBBOCK, TX [LBB]
+						
+							<option value="LUX">LUXEMBOURG, LUXEMBOURG [LUX]
+						
+							<option value="LYS">LYON, FRANCE [LYS]
+						
+							<option value="MSN">MADISON, WI [MSN]
+						
+							<option value="MAD">MADRID, SPAIN [MAD]
+						
+							<option value="MAJ">MAJURO, MARSHALL ISLANDS [MAJ]
+						
+							<option value="MLA">MALTA, MALTA [MLA]
+						
+							<option value="MGA">MANAGUA, NICARAGUA [MGA]
+						
+							<option value="MAN">MANCHESTER, ENGLAND UK [MAN]
+						
+							<option value="MHT">MANCHESTER, NH [MHT]
+						
+							<option value="MHK">MANHATTAN, KS [MHK]
+						
+							<option value="MNL">MANILA, PHILIPPINES [MNL]
+						
+							<option value="MQT">MARQUETTE, MI [MQT]
+						
+							<option value="MRS">MARSEILLE, FRANCE [MRS]
+						
+							<option value="MFE">MCALLEN, TX [MFE]
+						
+							<option value="MDE">MEDELLIN, COLOMBIA [MDE]
+						
+							<option value="MFR">MEDFORD, OR [MFR]
+						
+							<option value="MLB">MELBOURNE, FL [MLB]
+						
+							<option value="MEL">MELBOURNE, VICTORIA, AUSTRALIA [MEL]
+						
+							<option value="MEM">MEMPHIS, TN [MEM]
+						
+							<option value="MID">MENDA, MEXICO [MID]
+						
+							<option value="MEI">MERIDIAN, MS [MEI]
+						
+							<option value="MEX">MEXICO CITY, MEXICO [MEX]
+						
+							<option value="MIA">MIAMI, FL [MIA]
+						
+							<option value="MAF">MIDLAND-ODESSA, TX [MAF]
+						
+							<option value="MIL">MILAN, ITALY [MIL]
+						
+							<option value="MKE">MILWAUKEE, WI [MKE]
+						
+							<option value="MSP">MINNEAPOLIS-ST.PAUL, MN [MSP]
+						
+							<option value="MOT">MINOT, ND [MOT]
+						
+							<option value="MSO">MISSOULA, MT [MSO]
+						
+							<option value="MOB">MOBILE, AL [MOB]
+						
+							<option value="MOD">MODESTO, CA [MOD]
+						
+							<option value="MLI">MOLINE, IL [MLI]
+						
+							<option value="MLU">MONROE, LA [MLU]
+						
+							<option value="MLW">MONROVIA, LIBERIA [MLW]
+						
+							<option value="MBJ">MONTEGO BAY, JAMAICA [MBJ]
+						
+							<option value="MRY">MONTEREY, CA [MRY]
+						
+							<option value="MTY">MONTERREY, MEXICO [MTY]
+						
+							<option value="MGM">MONTGOMERY, AL [MGM]
+						
+							<option value="YMQ">MONTREAL, QUEBEC, CANADA [YMQ]
+						
+							<option value="YUL">MONTREAL, QUEBEC, CANADA [YUL]
+						
+							<option value="MLM">MORELIA, MEXICO [MLM]
+						
+							<option value="MGW">MORGANTOWN, WV [MGW]
+						
+							<option value="MOW">MOSCOW, RUSSIA [MOW]
+						
+							<option value="MUC">MUNICH, GERMANY [MUC]
+						
+							<option value="MCT">MUSCAT, OMAN [MCT]
+						
+							<option value="MYR">MYRTLE BEACH, SC [MYR]
+						
+							<option value="NGO">NAGOYA, JAPAN [NGO]
+						
+							<option value="NBO">NAIROBI, KENYA [NBO]
+						
+							<option value="NAP">NAPLES, ITALY [NAP]
+						
+							<option value="BNA">NASHVILLE, TN [BNA]
+						
+							<option value="NAS">NASSAU, BAHAMAS [NAS]
+						
+							<option value="NDJ">NDJAMENA, CHAD [NDJ]
+						
+							<option value="EWN">NEW BERN, NC [EWN]
+						
+							<option value="HVN">NEW HAVEN, CT [HVN]
+						
+							<option value="MSY">NEW ORLEANS, LA [MSY]
+						
+							<option value="JFK">NEW YORK, NY [JFK]
+						
+							<option value="LGA">NEW YORK, NY [LGA]
+						
+							<option value="NYC">NEW YORK, NY [NYC]
+						
+							<option value="EWR">NEWARK, NJ [EWR]
+						
+							<option value="SWF">NEWBURGH, NY [SWF]
+						
+							<option value="PHF">NEWPORT NEWS, VA [PHF]
+						
+							<option value="NIM">NIAMEY, NIGER [NIM]
+						
+							<option value="NCE">NICE, FRANCE [NCE]
+						
+							<option value="OME">NOME, AK [OME]
+						
+							<option value="ORF">NORFOLK, VA [ORF]
+						
+							<option value="OTH">NORTH BEND, OR [OTH]
+						
+							<option value="NUE">NUREMBERG, GERMANY [NUE]
+						
+							<option value="OKA">OKINAWA, JAPAN [OKA]
+						
+							<option value="OKC">OKLAHOMA CITY, OK [OKC]
+						
+							<option value="OMA">OMAHA, NE [OMA]
+						
+							<option value="SNA">ORANGE COUNTY, CA [SNA]
+						
+							<option value="MCO">ORLANDO, FL [MCO]
+						
+							<option value="OSA">OSAKA, JAPAN [OSA]
+						
+							<option value="OSL">OSLO, NORWAY [OSL]
+						
+							<option value="YOW">OTTAWA, ONTARIO, CANADA [YOW]
+						
+							<option value="OUA">OUAGADOUGOU, BURKINA FASO [OUA]
+						
+							<option value="PSP">PALM SPRINGS, CA [PSP]
+						
+							<option value="PTY">PANAMA CITY, PANAMA [PTY]
+						
+							<option value="ECP">PANAMA CITY, FL [ECP]
+						
+							<option value="PAR">PARIS, FRANCE [PAR]
+						
+							<option value="PSC">PASCO, WA [PSC]
+						
+							<option value="PLN">PELLSTON, MI [PLN]
+						
+							<option value="PNS">PENSACOLA, FL [PNS]
+						
+							<option value="PIA">PEORIA, IL [PIA]
+						
+							<option value="PER">PERTH, AUSTRALIA [PER]
+						
+							<option value="PSG">PETERSBURG, AK [PSG]
+						
+							<option value="PHL">PHILADELPHIA, PA [PHL]
+						
+							<option value="PNH">PHNOM PENH, CAMBODIA [PNH]
+						
+							<option value="PHX">PHOENIX/SCOTTSDALE, AZ [PHX]
+						
+							<option value="PIR">PIERRE, SD [PIR]
+						
+							<option value="PSA">PISA, ITALY [PSA]
+						
+							<option value="PIT">PITTSBURGH, PA [PIT]
+						
+							<option value="PBG">PLATTSBURGH, NY [PBG]
+						
+							<option value="PIH">POCATELLO, ID [PIH]
+						
+							<option value="POS">PORT OF SPAIN, TRINIDAD & TOBAGO [POS]
+						
+							<option value="PAP">PORT-AU-PRINCE, HAITI [PAP]
+						
+							<option value="PWM">PORTLAND, ME [PWM]
+						
+							<option value="PDX">PORTLAND, OR [PDX]
+						
+							<option value="PRG">PRAGUE, CZECH REPUBLIC [PRG]
+						
+							<option value="PQI">PRESQUE ISLE, ME [PQI]
+						
+							<option value="PVD">PROVIDENCE, RI [PVD]
+						
+							<option value="PLS">PROVIDENCIALES, TURKS AND CAICOS [PLS]
+						
+							<option value="SCC">PRUDHOE BAY/DEADHORSE, AK [SCC]
+						
+							<option value="PVR">PUERTO VALLARTA, MEXICO [PVR]
+						
+							<option value="PUW">PULLMAN, WA [PUW]
+						
+							<option value="PUJ">PUNTA CANA, DOMINICAN REPUBLIC [PUJ]
+						
+							<option value="PUS">PUSAN, KOREA [PUS]
+						
+							<option value="YQB">QUEBEC, QUEBEC, CANADA [YQB]
+						
+							<option value="QRO">QUERETARO, MEXICO [QRO]
+						
+							<option value="UIO">QUITO, ECUADOR [UIO]
+						
+							<option value="RBA">RABAT, MOROCCO [RBA]
+						
+							<option value="RDU">RALEIGH-DURHAM, NC [RDU]
+						
+							<option value="RAP">RAPID CITY, SD [RAP]
+						
+							<option value="REC">RECIFE, BRAZIL [REC]
+						
+							<option value="RDD">REDDING, CA [RDD]
+						
+							<option value="RDM">REDMOND, OR [RDM]
+						
+							<option value="RNO">RENO, NV [RNO]
+						
+							<option value="REK">REYKJAVIK, ICELAND [REK]
+						
+							<option value="RHI">RHINELANDER, WI [RHI]
+						
+							<option value="RIC">RICHMOND, VA [RIC]
+						
+							<option value="RIX">RIGA, LATVIA [RIX]
+						
+							<option value="RIO">RIO DE JANIERO, BRAZIL [RIO]
+						
+							<option value="ROA">ROANOKE, VA [ROA]
+						
+							<option value="RST">ROCHESTER, MN [RST]
+						
+							<option value="ROC">ROCHESTER, NY [ROC]
+						
+							<option value="RKS">ROCK SPRINGS, WY [RKS]
+						
+							<option value="ROM">ROME, ITALY [ROM]
+						
+							<option value="ROW">ROSWELL, NM [ROW]
+						
+							<option value="SMF">SACRAMENTO, CA [SMF]
+						
+							<option value="MBS">SAGINAW, MI [MBS]
+						
+							<option value="SPN">SAIPAN, MARIANA ISLANDS [SPN]
+						
+							<option value="SBY">SALISBURY, MD [SBY]
+						
+							<option value="SLC">SALT LAKE CITY, UT [SLC]
+						
+							<option value="SSA">SALVADOR, BRAZIL [SSA]
+						
+							<option value="SJT">SAN ANGELO, TX [SJT]
+						
+							<option value="SAT">SAN ANTONIO, TX [SAT]
+						
+							<option value="SAN">SAN DIEGO, CA [SAN]
+						
+							<option value="OAK">SAN FRANCISCO, CA [OAK]
+						
+							<option value="SFO">SAN FRANCISCO, CA [SFO]
+						
+							<option value="SJO">SAN JOSE, COSTA RICA [SJO]
+						
+							<option value="SJC">SAN JOSE, CA [SJC]
+						
+							<option value="SJU">SAN JUAN, PR [SJU]
+						
+							<option value="SBP">SAN LUIS OBISPO, CA [SBP]
+						
+							<option value="SAP">SAN PEDRO, HONDURAS [SAP]
+						
+							<option value="SAL">SAN SALVADOR, EL SALVADOR [SAL]
+						
+							<option value="SBA">SANTA BARBARA, CA [SBA]
+						
+							<option value="SRZ">SANTA CRUZ, BOLIVIA [SRZ]
+						
+							<option value="SAF">SANTA FE, NM [SAF]
+						
+							<option value="SMX">SANTA MARIA, CA [SMX]
+						
+							<option value="STS">SANTA ROSA, CA [STS]
+						
+							<option value="SCL">SANTIAGO, CHILE [SCL]
+						
+							<option value="STI">SANTIAGO, DOMENICAN REPUBLIC [STI]
+						
+							<option value="SDQ">SANTO DOMINGO, DOMINICAN REPUBLIC [SDQ]
+						
+							<option value="SAO">SAO PAULO, BRAZIL [SAO]
+						
+							<option value="SJJ">SARAJEVO, BOSNIA [SJJ]
+						
+							<option value="SRQ">SARASOTA-BRADENTON, FL [SRQ]
+						
+							<option value="SAV">SAVANNAH, GA [SAV]
+						
+							<option value="AVP">SCRANTON, PA [AVP]
+						
+							<option value="SEA">SEATTLE-TACOMA, WA [SEA]
+						
+							<option value="SEL">SEOUL, KOREA [SEL]
+						
+							<option value="SHA">SHANGHAI, CHINA [SHA]
+						
+							<option value="SNN">SHANNON, IRELAND [SNN]
+						
+							<option value="SHV">SHREVEPORT, LA [SHV]
+						
+							<option value="SIN">SINGAPORE, SINGAPORE [SIN]
+						
+							<option value="SUX">SIOUX CITY, IA [SUX]
+						
+							<option value="FSD">SIOUX FALLS, SD [FSD]
+						
+							<option value="SIT">SITKA, AK [SIT]
+						
+							<option value="SKP">SKOPJE, MACEDONIA [SKP]
+						
+							<option value="SOF">SOFIA, BULGARIA [SOF]
+						
+							<option value="SBN">SOUTH BEND, IN [SBN]
+						
+							<option value="GEG">SPOKANE, WA [GEG]
+						
+							<option value="SPI">SPRINGFIELD, IL [SPI]
+						
+							<option value="SGF">SPRINGFIELD, MO [SGF]
+						
+							<option value="STX">ST. CROIX, VI [STX]
+						
+							<option value="SGU">ST. GEORGE, UT [SGU]
+						
+							<option value="SKB">ST. KITT'S, NEVIS [SKB]
+						
+							<option value="STL">ST. LOUIS, MO [STL]
+						
+							<option value="SLU">ST. LUCIA, SAINT LUCIA [SLU]
+						
+							<option value="LED">ST. PETERSBURG, RUSSIA [LED]
+						
+							<option value="STT">ST. THOMAS, VI [STT]
+						
+							<option value="SCE">STATE COLLEGE, PA [SCE]
+						
+							<option value="SHD">STAUNTON, VA [SHD]
+						
+							<option value="SVG">STAVANGER, NORWAY [SVG]
+						
+							<option value="STO">STOCKHOLM, SWEDEN [STO]
+						
+							<option value="SXB">STRASBOURG, FRANCE [SXB]
+						
+							<option value="STR">STUTTGART, GERMANY [STR]
+						
+							<option value="SUN">SUN VALLEY, ID [SUN]
+						
+							<option value="SYD">SYDNEY, NEW  S. WALES, AUSTRALIA [SYD]
+						
+							<option value="SYR">SYRACUSE, NY [SYR]
+						
+							<option value="TPE">TAIPEI, TAIWAN [TPE]
+						
+							<option value="TLH">TALLAHASSEE, FL [TLH]
+						
+							<option value="TPA">TAMPA, FL [TPA]
+						
+							<option value="TGU">TEGUCIGALPA, HONDURAS [TGU]
+						
+							<option value="TLV">TEL AVIV, ISRAEL [TLV]
+						
+							<option value="TXK">TEXARKANA, TX [TXK]
+						
+							<option value="TIA">TIRANA, ALBANIA [TIA]
+						
+							<option value="TYO">TOKYO, JAPAN [TYO]
+						
+							<option value="TOL">TOLEDO, OH [TOL]
+						
+							<option value="YTO">TORONTO, ONTARIO, CANADA [YTO]
+						
+							<option value="EIS">TORTOLA, BEEF ISLAND, BRITISH VIRGIN ISLANDS [EIS]
+						
+							<option value="TLS">TOULOUSE, FRANCE [TLS]
+						
+							<option value="TVC">TRAVERSE CITY, MI [TVC]
+						
+							<option value="TRI">TRI-CITIES, TN [TRI]
+						
+							<option value="TRD">TRONDHEIM, NORWAY [TRD]
+						
+							<option value="TUS">TUCSON, AZ [TUS]
+						
+							<option value="TUL">TULSA, OK [TUL]
+						
+							<option value="TUN">TUNIS, TUNISIA [TUN]
+						
+							<option value="TUP">TUPELO, MS [TUP]
+						
+							<option value="TRN">TURIN, ITALY [TRN]
+						
+							<option value="TWF">TWIN FALLS, ID [TWF]
+						
+							<option value="TYR">TYLER, TX [TYR]
+						
+							<option value="VLD">VALDOSTA, GA [VLD]
+						
+							<option value="YVR">VANCOUVER, B.C., CANADA [YVR]
+						
+							<option value="VCE">VENICE, ITALY [VCE]
+						
+							<option value="VER">VERONA, ITALY [VER]
+						
+							<option value="VRN">VERONA, ITALY [VRN]
+						
+							<option value="VCT">VICTORIA, TX [VCT]
+						
+							<option value="YYJ">VICTORIA, B.C., CANADA [YYJ]
+						
+							<option value="VIE">VIENNA, AUSTRIA [VIE]
+						
+							<option value="VNO">VILNIUS, LITHUANIA [VNO]
+						
+							<option value="ACT">WACO, TX [ACT]
+						
+							<option value="ALW">WALLA WALLA, WA [ALW]
+						
+							<option value="WAW">WARSAW, POLAND [WAW]
+						
+							<option value="BWI">WASHINGTON, DC [BWI]
+						
+							<option value="DCA">WASHINGTON, DC [DCA]
+						
+							<option value="IAD">WASHINGTON, DC [IAD]
+						
+							<option value="WAS">WASHINGTON, DC [WAS]
+						
+							<option value="ALO">WATERLOO, IA [ALO]
+						
+							<option value="ART">WATERTOWN, NY [ART]
+						
+							<option value="ATY">WATERTOWN, SD [ATY]
+						
+							<option value="CWA">WAUSAU, WI [CWA]
+						
+							<option value="EAT">WENATCHEE, WA [EAT]
+						
+							<option value="PBI">WEST PALM BEACH, FL [PBI]
+						
+							<option value="HPN">WHITE PLAINS, NY [HPN]
+						
+							<option value="ICT">WICHITA, KS [ICT]
+						
+							<option value="SPS">WICHITA FALLS, TX [SPS]
+						
+							<option value="IPT">WILLIAMSPORT, PA [IPT]
+						
+							<option value="ILM">WILMINGTON, NC [ILM]
+						
+							<option value="YWG">WINNEPEG, MANITOBA, CANADA [YWG]
+						
+							<option value="WRG">WRANGELL, AK [WRG]
+						
+							<option value="YKM">YAKIMA, WA [YKM]
+						
+							<option value="YAK">YAKUTAT, AK [YAK]
+						
+							<option value="YUM">YUMA, AZ [YUM]
+						
+							<option value="ZAG">ZAGREB, CROATIA [ZAG]
+						
+							<option value="ZRH">ZURICH, SWITZERLAND [ZRH]
+												
+					</select>									
+
+					<p>Or Enter City or Airport Code</p>
+					
+					 <input type="text" name="departing_from" size="15" id="departing_from"><br><br></div>
+					 
+					 
+				  <div>
+					<select name="arriving_to1"  id="arriving_to1" >
+						<option value="">Choose an Arrival City
+						
+							<option value="ABR">ABERDEEN, SD [ABR]
+						
+							<option value="ABJ">ABIDJAN, COTE D'IVOIRE [ABJ]
+						
+							<option value="ABI">ABILENE, TX [ABI]
+						
+							<option value="AUH">ABU DHABI, UNITED ARAB EMIRATES [AUH]
+						
+							<option value="ABV">ABUJA, NIGERIA [ABV]
+						
+							<option value="ACC">ACCRA, GHANA [ACC]
+						
+							<option value="ADD">ADDIS ABABA, ETHIOPIA [ADD]
+						
+							<option value="ADL">ADELAIDE, S. AUSTRALIA, AUSTRALIA [ADL]
+						
+							<option value="BQN">AGUADILLA, PR [BQN]
+						
+							<option value="AGU">AGUASCALIENTES, MEXICO [AGU]
+						
+							<option value="CAK">AKRON, OH [CAK]
+						
+							<option value="ABY">ALBANY, GA [ABY]
+						
+							<option value="ALB">ALBANY, NY [ALB]
+						
+							<option value="ABQ">ALBUQUERQUE, NM [ABQ]
+						
+							<option value="AEX">ALEXANDRIA, LA [AEX]
+						
+							<option value="ABE">ALLENTOWN, PA [ABE]
+						
+							<option value="ALA">ALMATY, KAZAKHSTAN [ALA]
+						
+							<option value="APN">ALPENA, MI [APN]
+						
+							<option value="AOO">ALTOONA, PA [AOO]
+						
+							<option value="AMA">AMARILLO, TX [AMA]
+						
+							<option value="AMM">AMMAN, JORDAN [AMM]
+						
+							<option value="AMS">AMSTERDAM, NETHERLANDS [AMS]
+						
+							<option value="ANC">ANCHORAGE, AK [ANC]
+						
+							<option value="ANK">ANKARA, TURKEY [ANK]
+						
+							<option value="ANU">ANTIGUA, LEEWARD ISLANDS [ANU]
+						
+							<option value="ATW">APPLETON, WI [ATW]
+						
+							<option value="ACV">ARCATA/EUREKA, CA [ACV]
+						
+							<option value="AUA">ARUBA, ARUBA [AUA]
+						
+							<option value="AVL">ASHEVILLE, NC [AVL]
+						
+							<option value="ASE">ASPEN, CO [ASE]
+						
+							<option value="ATH">ATHENS, GREECE [ATH]
+						
+							<option value="ATL">ATLANTA, GA [ATL]
+						
+							<option value="ACY">ATLANTIC CITY, NJ [ACY]
+						
+							<option value="AKL">AUCKLAND, NEW ZEALAND [AKL]
+						
+							<option value="AGS">AUGUSTA, GA [AGS]
+						
+							<option value="AUS">AUSTIN, TX [AUS]
+						
+							<option value="BAH">BAHRAIN, BAHRAIN [BAH]
+						
+							<option value="BFL">BAKERSFIELD, CA [BFL]
+						
+							<option value="BKO">BAMAKO, MALI [BKO]
+						
+							<option value="BLR">BANGALORE, INDIA [BLR]
+						
+							<option value="BKK">BANGKOK, THAILAND [BKK]
+						
+							<option value="BGR">BANGOR, ME [BGR]
+						
+							<option value="BHB">BAR HARBOR, ME [BHB]
+						
+							<option value="BGI">BARBADOS, BARBADOS [BGI]
+						
+							<option value="BCN">BARCELONA, SPAIN [BCN]
+						
+							<option value="BRW">BARROW, AK [BRW]
+						
+							<option value="BTR">BATON ROUGE, LA [BTR]
+						
+							<option value="BPT">BEAUMONT-PORT ARTHUR, TX [BPT]
+						
+							<option value="BKW">BECKLEY, WV [BKW]
+						
+							<option value="BJS">BEIJING, CHINA [BJS]
+						
+							<option value="BFS">BELFAST, N. IRELAND [BFS]
+						
+							<option value="BEG">BELGRADE, YUGOSLAVIA [BEG]
+						
+							<option value="BZE">BELIZE CITY, BELIZE [BZE]
+						
+							<option value="BLI">BELLINGHAM, WA [BLI]
+						
+							<option value="BJI">BEMIDJI, MN [BJI]
+						
+							<option value="BGO">BERGEN, NORWAY [BGO]
+						
+							<option value="BER">BERLIN, GERMANY [BER]
+						
+							<option value="BDA">BERMUDA, BERMUDA [BDA]
+						
+							<option value="BET">BETHEL, AK [BET]
+						
+							<option value="BIL">BILLINGS, MT [BIL]
+						
+							<option value="BGM">BINGHAMTON, NY [BGM]
+						
+							<option value="BHX">BIRMINGHAM, ENGLAND UK [BHX]
+						
+							<option value="BHM">BIRMINGHAM, AL [BHM]
+						
+							<option value="BIS">BISMARCK, ND [BIS]
+						
+							<option value="BMI">BLOOMINGTON, IL [BMI]
+						
+							<option value="BOG">BOGOTA, COLOMBIA [BOG]
+						
+							<option value="BOI">BOISE, ID [BOI]
+						
+							<option value="BOM">BOMBAY, INDIA [BOM]
+						
+							<option value="BOS">BOSTON, MA [BOS]
+						
+							<option value="BZN">BOZEMAN, MT [BZN]
+						
+							<option value="BRD">BRAINERD, MN [BRD]
+						
+							<option value="BSB">BRASILIA, BRAZIL [BSB]
+						
+							<option value="BZV">BRAZZAVILLE, CONGO [BZV]
+						
+							<option value="BRE">BREMEN, GERMANY [BRE]
+						
+							<option value="BNE">BRISBANE, QUEENSLAND, AUSTRALIA [BNE]
+						
+							<option value="BRS">BRISTOL, UNITED KINGDOM [BRS]
+						
+							<option value="BRO">BROWNSVILLE, TX [BRO]
+						
+							<option value="BQK">BRUNSWICK, GA [BQK]
+						
+							<option value="BRU">BRUSSELS, BELGIUM [BRU]
+						
+							<option value="BUH">BUCHAREST, ROMANIA [BUH]
+						
+							<option value="BUD">BUDAPEST, HUNGARY [BUD]
+						
+							<option value="BUE">BUENOS AIRES, ARGENTINA [BUE]
+						
+							<option value="BUF">BUFFALO, NY [BUF]
+						
+							<option value="BTV">BURLINGTON, VT [BTV]
+						
+							<option value="BTM">BUTTE, MT [BTM]
+						
+							<option value="CAI">CAIRO, EGYPT [CAI]
+						
+							<option value="YYC">CALGARY, ALBERTA, CANADA [YYC]
+						
+							<option value="CLO">CALI, COLOMBIA [CLO]
+						
+							<option value="CBR">CANBERRA, AUST. CAP. TERR., AUSTRALIA [CBR]
+						
+							<option value="CUN">CANCUN, MEXICO [CUN]
+						
+							<option value="CPT">CAPE TOWN, SOUTH AFRICA [CPT]
+						
+							<option value="CCS">CARACAS, VENEZUELA [CCS]
+						
+							<option value="CLD">CARLSBAD, CA [CLD]
+						
+							<option value="CAS">CASABLANCA, MOROCCO [CAS]
+						
+							<option value="CPR">CASPER, WY [CPR]
+						
+							<option value="CTA">CATANIA, ITALY [CTA]
+						
+							<option value="CDC">CEDAR CITY, UT [CDC]
+						
+							<option value="CID">CEDAR RAPIDS, IA [CID]
+						
+							<option value="CMI">CHAMPAIGN, IL [CMI]
+						
+							<option value="CHQ">CHANIA, GREECE [CHQ]
+						
+							<option value="CHS">CHARLESTON, SC [CHS]
+						
+							<option value="CRW">CHARLESTON, WV [CRW]
+						
+							<option value="CLT">CHARLOTTE, NC [CLT]
+						
+							<option value="CHO">CHARLOTTESVILLE, VA [CHO]
+						
+							<option value="CHA">CHATTANOOGA, TN [CHA]
+						
+							<option value="MAA">CHENNAI, INDIA [MAA]
+						
+							<option value="CYS">CHEYENNE, WY [CYS]
+						
+							<option value="CHI">CHICAGO, IL [CHI]
+						
+							<option value="MDW">CHICAGO, IL [MDW]
+						
+							<option value="ORD">CHICAGO, IL [ORD]
+						
+							<option value="CIC">CHICO, CA [CIC]
+						
+							<option value="HIB">CHISHOLM, MN [HIB]
+						
+							<option value="CVG">CINCINNATI, OH [CVG]
+						
+							<option value="CME">CIUDAD DEL CARMEN, MEXICO [CME]
+						
+							<option value="CKB">CLARKSBURG, WV [CKB]
+						
+							<option value="CLE">CLEVELAND, OH [CLE]
+						
+							<option value="COD">CODY, WY [COD]
+						
+							<option value="CLL">COLLEGE STATION, TX [CLL]
+						
+							<option value="CGN">COLOGNE, GERMANY [CGN]
+						
+							<option value="COS">COLORADO SPRINGS, CO [COS]
+						
+							<option value="COU">COLUMBIA, MO [COU]
+						
+							<option value="CAE">COLUMBIA, SC [CAE]
+						
+							<option value="CSG">COLUMBUS, GA [CSG]
+						
+							<option value="GTR">COLUMBUS, MS [GTR]
+						
+							<option value="CMH">COLUMBUS, OH [CMH]
+						
+							<option value="CPH">COPENHAGEN, DENMARK [CPH]
+						
+							<option value="CDV">CORDOVA, AK [CDV]
+						
+							<option value="CRP">CORPUS CHRISTI, TX [CRP]
+						
+							<option value="COO">COTONOU, BENIN [COO]
+						
+							<option value="CEC">CRESCENT CITY, CA [CEC]
+						
+							<option value="CUR">CURACAO, NETHERLANDS ANTILLES [CUR]
+						
+							<option value="DKR">DAKAR, SENEGAL [DKR]
+						
+							<option value="DAL">DALLAS-FT. WORTH, TX [DAL]
+						
+							<option value="DFW">DALLAS-FT. WORTH, TX [DFW]
+						
+							<option value="DAR">DAR ES SALAAM, TANZANIA [DAR]
+						
+							<option value="DAY">DAYTON, OH [DAY]
+						
+							<option value="DAB">DAYTONA BEACH, FL [DAB]
+						
+							<option value="DEL">DELHI, INDIA [DEL]
+						
+							<option value="DEN">DENVER, CO [DEN]
+						
+							<option value="DSM">DES MOINES, IA [DSM]
+						
+							<option value="DTW">DETROIT, MI [DTW]
+						
+							<option value="DVL">DEVIL'S LAKE, ND [DVL]
+						
+							<option value="DLG">DILLINGHAM, AK [DLG]
+						
+							<option value="DOH">DOHA, QATAR [DOH]
+						
+							<option value="DOM">DOMINICA, DOMINICA [DOM]
+						
+							<option value="DHN">DOTHAN, AL [DHN]
+						
+							<option value="DLA">DOUALA, CAMEROON [DLA]
+						
+							<option value="DRS">DRESDEN, GERMANY [DRS]
+						
+							<option value="DXB">DUBAI, UNITED ARAB EMIRATES [DXB]
+						
+							<option value="DUB">DUBLIN, IRELAND [DUB]
+						
+							<option value="DBQ">DUBUQUE, IA [DBQ]
+						
+							<option value="DLH">DULUTH, MN [DLH]
+						
+							<option value="DRO">DURANGO, CO [DRO]
+						
+							<option value="DUS">DUSSELDORF, GERMANY [DUS]
+						
+							<option value="DUT">DUTCH HARBOR, AK [DUT]
+						
+							<option value="EAU">EAU CLAIRE, WI [EAU]
+						
+							<option value="EDI">EDINBURGH, SCOTLAND UK [EDI]
+						
+							<option value="YEA">EDMONTON, ALBERTA, CANADA [YEA]
+						
+							<option value="ELP">EL PASO, TX [ELP]
+						
+							<option value="EKO">ELKO, NV [EKO]
+						
+							<option value="ELM">ELMIRA, NY [ELM]
+						
+							<option value="EBB">ENTEBBE, UGANDA [EBB]
+						
+							<option value="ERI">ERIE, PA [ERI]
+						
+							<option value="EUG">EUGENE, OR [EUG]
+						
+							<option value="EVV">EVANSVILLE, IN [EVV]
+						
+							<option value="FAI">FAIRBANKS, AK [FAI]
+						
+							<option value="FAR">FARGO, ND [FAR]
+						
+							<option value="FYV">FAYETTEVILLE, AR [FYV]
+						
+							<option value="XNA">FAYETTEVILLE, AR [XNA]
+						
+							<option value="FAY">FAYETTEVILLE, NC [FAY]
+						
+							<option value="FLG">FLAGSTAFF, AZ [FLG]
+						
+							<option value="FNT">FLINT, MI [FNT]
+						
+							<option value="FLR">FLORENCE, ITALY [FLR]
+						
+							<option value="FLO">FLORENCE, SC [FLO]
+						
+							<option value="FMY">FORT MYERS, FL [FMY]
+						
+							<option value="FRA">FRANKFURT, GERMANY [FRA]
+						
+							<option value="FPO">FREEPORT, BAHAMAS [FPO]
+						
+							<option value="FAT">FRESNO, CA [FAT]
+						
+							<option value="FLL">FT. LAUDERDALE, FL [FLL]
+						
+							<option value="RSW">FT. MYERS, FL [RSW]
+						
+							<option value="FSM">FT. SMITH, AR [FSM]
+						
+							<option value="VPS">FT. WALTON BEACH, FL [VPS]
+						
+							<option value="FWA">FT. WAYNE, IN [FWA]
+						
+							<option value="FUK">FUKUOKA, JAPAN [FUK]
+						
+							<option value="GNV">GAINESVILLE, FL [GNV]
+						
+							<option value="GVA">GENEVA, SWITZERLAND [GVA]
+						
+							<option value="GGT">GEORGE TOWN, BAHAMAS [GGT]
+						
+							<option value="GEO">GEORGETOWN, GUYANA [GEO]
+						
+							<option value="GCC">GILLETTE, WY [GCC]
+						
+							<option value="GLA">GLASGOW, SCOTLAND UK [GLA]
+						
+							<option value="GCM">GRAND CAYMAN ISLAND, CAYMAN ISLANDS [GCM]
+						
+							<option value="GFK">GRAND FORKS, ND [GFK]
+						
+							<option value="GJT">GRAND JUNCTION, CO [GJT]
+						
+							<option value="GRR">GRAND RAPIDS, MI [GRR]
+						
+							<option value="GTF">GREAT FALLS, MT [GTF]
+						
+							<option value="GRB">GREEN BAY, WI [GRB]
+						
+							<option value="GSO">GREENSBORO, NC [GSO]
+						
+							<option value="GLH">GREENVILLE, MS [GLH]
+						
+							<option value="GSP">GREENVILLE, SC [GSP]
+						
+							<option value="GDL">GUADALAJARA, MEXICO [GDL]
+						
+							<option value="GUM">GUAM, GUAM [GUM]
+						
+							<option value="CAN">GUANGZHOU, CHINA [CAN]
+						
+							<option value="GUA">GUATEMALA CITY, GUATEMALA [GUA]
+						
+							<option value="GYE">GUAYAQUIL, ECUADOR [GYE]
+						
+							<option value="GPT">GULFPORT, MS [GPT]
+						
+							<option value="YHZ">HALIFAX, NOVA SCOTIA, CANADA [YHZ]
+						
+							<option value="HAM">HAMBURG, GERMANY [HAM]
+						
+							<option value="CMX">HANCOCK, MI [CMX]
+						
+							<option value="HAN">HANOI, VIETNAM [HAN]
+						
+							<option value="HRL">HARLINGEN, TX [HRL]
+						
+							<option value="MDT">HARRISBURG, PA [MDT]
+						
+							<option value="BDL">HARTFORD, CT [BDL]
+						
+							<option value="HLN">HELENA, MT [HLN]
+						
+							<option value="HEL">HELSINKI, FINLAND [HEL]
+						
+							<option value="HMO">HERMOSILLO, MEXICO [HMO]
+						
+							<option value="ITO">HILO, HI [ITO]
+						
+							<option value="HHH">HILTON HEAD ISLAND, SC [HHH]
+						
+							<option value="HIJ">HIROSHIMA, JAPAN [HIJ]
+						
+							<option value="SGN">HO CHI MINH CITY, VIET NAM [SGN]
+						
+							<option value="HOB">HOBBS, NM [HOB]
+						
+							<option value="HKG">HONG KONG, CHINA [HKG]
+						
+							<option value="HNL">HONOLULU, HI [HNL]
+						
+							<option value="HOU">HOUSTON, TX [HOU]
+						
+							<option value="IAH">HOUSTON, TX [IAH]
+						
+							<option value="HTS">HUNTINGTON, WV [HTS]
+						
+							<option value="HSV">HUNTSVILLE, AL [HSV]
+						
+							<option value="IDA">IDAHO FALLS, ID [IDA]
+						
+							<option value="IPL">IMPERIAL, CA [IPL]
+						
+							<option value="IND">INDIANAPOLIS, IN [IND]
+						
+							<option value="INL">INTERNATIONAL FALLS, MN [INL]
+						
+							<option value="IYK">INYOKERN, CA [IYK]
+						
+							<option value="ISP">ISLIP, NY [ISP]
+						
+							<option value="IST">ISTANBUL, TURKEY [IST]
+						
+							<option value="ITH">ITHACA, NY [ITH]
+						
+							<option value="JAN">JACKSON, MS [JAN]
+						
+							<option value="JAC">JACKSON HOLE, WY [JAC]
+						
+							<option value="JAX">JACKSONVILLE, FL [JAX]
+						
+							<option value="OAJ">JACKSONVILLE, NC [OAJ]
+						
+							<option value="JKT">JAKARTA, INDONESIA [JKT]
+						
+							<option value="JMS">JAMESTOWN, ND [JMS]
+						
+							<option value="JNB">JOHANNESBURG, SOUTH AFRICA [JNB]
+						
+							<option value="JST">JOHNSTOWN, PA [JST]
+						
+							<option value="JNU">JUNEAU, AK [JNU]
+						
+							<option value="OGG">KAHULUI, HI [OGG]
+						
+							<option value="AZO">KALAMAZOO, MI [AZO]
+						
+							<option value="FCA">KALISPELL, MT [FCA]
+						
+							<option value="MCI">KANSAS CITY, MO [MCI]
+						
+							<option value="LIH">KAUAI, HI [LIH]
+						
+							<option value="KTN">KETCHIKAN, AK [KTN]
+						
+							<option value="EYW">KEY WEST, FL [EYW]
+						
+							<option value="IEV">KIEV, UKRAINE [IEV]
+						
+							<option value="KGL">KIGALI, RWANDA [KGL]
+						
+							<option value="JRO">KILIMANJARO, TANZANIA [JRO]
+						
+							<option value="GRK">KILLEEN GRAY AAF, TX [GRK]
+						
+							<option value="AKN">KING SALMON, AK [AKN]
+						
+							<option value="KIN">KINGSTON, JAMAICA [KIN]
+						
+							<option value="LMT">KLAMATH FALLS, OR [LMT]
+						
+							<option value="TYS">KNOXVILLE, TN [TYS]
+						
+							<option value="ADQ">KODIAK, AK [ADQ]
+						
+							<option value="KOA">KONA, HI [KOA]
+						
+							<option value="ROR">KOROR, PALAU [ROR]
+						
+							<option value="OTZ">KOTZEBUE, AK [OTZ]
+						
+							<option value="KRK">KRAKOW, POLAND [KRK]
+						
+							<option value="KWI">KUWAIT, KUWAIT [KWI]
+						
+							<option value="LSE">LA CROSSE, WI [LSE]
+						
+							<option value="LPB">LA PAZ, BOLIVIA [LPB]
+						
+							<option value="LFT">LAFAYETTE, LA [LFT]
+						
+							<option value="LOS">LAGOS, NIGERIA [LOS]
+						
+							<option value="LCH">LAKE CHARLES, LA [LCH]
+						
+							<option value="LAN">LANSING, MI [LAN]
+						
+							<option value="LRD">LAREDO, TX [LRD]
+						
+							<option value="LAS">LAS VEGAS, NV [LAS]
+						
+							<option value="PIB">LAUREL, MS [PIB]
+						
+							<option value="LAW">LAWTON, OK [LAW]
+						
+							<option value="LBA">LEEDS/BRADFORD, ENGLAND UK [LBA]
+						
+							<option value="BJX">LEON/GUANAJUATO, MEXICO [BJX]
+						
+							<option value="LWS">LEWISTON, ID [LWS]
+						
+							<option value="LEX">LEXINGTON, KY [LEX]
+						
+							<option value="LIR">LIBERIA, COSTA RICA [LIR]
+						
+							<option value="LIM">LIMA, PERU [LIM]
+						
+							<option value="LNK">LINCOLN, NE [LNK]
+						
+							<option value="LIS">LISBON, PORTGUAL [LIS]
+						
+							<option value="LIT">LITTLE ROCK, AR [LIT]
+						
+							<option value="LON">LONDON, ENGLAND UK [LON]
+						
+							<option value="GGG">LONGVIEW, TX [GGG]
+						
+							<option value="BUR">LOS ANGELES, CA [BUR]
+						
+							<option value="LAX">LOS ANGELES, CA [LAX]
+						
+							<option value="LGB">LOS ANGELES, CA [LGB]
+						
+							<option value="ONT">LOS ANGELES, CA [ONT]
+						
+							<option value="SJD">LOS CABOS, MEXICO [SJD]
+						
+							<option value="SDF">LOUISVILLE, KY [SDF]
+						
+							<option value="LBB">LUBBOCK, TX [LBB]
+						
+							<option value="LUX">LUXEMBOURG, LUXEMBOURG [LUX]
+						
+							<option value="LYS">LYON, FRANCE [LYS]
+						
+							<option value="MSN">MADISON, WI [MSN]
+						
+							<option value="MAD">MADRID, SPAIN [MAD]
+						
+							<option value="MAJ">MAJURO, MARSHALL ISLANDS [MAJ]
+						
+							<option value="MLA">MALTA, MALTA [MLA]
+						
+							<option value="MGA">MANAGUA, NICARAGUA [MGA]
+						
+							<option value="MAN">MANCHESTER, ENGLAND UK [MAN]
+						
+							<option value="MHT">MANCHESTER, NH [MHT]
+						
+							<option value="MHK">MANHATTAN, KS [MHK]
+						
+							<option value="MNL">MANILA, PHILIPPINES [MNL]
+						
+							<option value="MQT">MARQUETTE, MI [MQT]
+						
+							<option value="MRS">MARSEILLE, FRANCE [MRS]
+						
+							<option value="MFE">MCALLEN, TX [MFE]
+						
+							<option value="MDE">MEDELLIN, COLOMBIA [MDE]
+						
+							<option value="MFR">MEDFORD, OR [MFR]
+						
+							<option value="MLB">MELBOURNE, FL [MLB]
+						
+							<option value="MEL">MELBOURNE, VICTORIA, AUSTRALIA [MEL]
+						
+							<option value="MEM">MEMPHIS, TN [MEM]
+						
+							<option value="MID">MENDA, MEXICO [MID]
+						
+							<option value="MEI">MERIDIAN, MS [MEI]
+						
+							<option value="MEX">MEXICO CITY, MEXICO [MEX]
+						
+							<option value="MIA">MIAMI, FL [MIA]
+						
+							<option value="MAF">MIDLAND-ODESSA, TX [MAF]
+						
+							<option value="MIL">MILAN, ITALY [MIL]
+						
+							<option value="MKE">MILWAUKEE, WI [MKE]
+						
+							<option value="MSP">MINNEAPOLIS-ST.PAUL, MN [MSP]
+						
+							<option value="MOT">MINOT, ND [MOT]
+						
+							<option value="MSO">MISSOULA, MT [MSO]
+						
+							<option value="MOB">MOBILE, AL [MOB]
+						
+							<option value="MOD">MODESTO, CA [MOD]
+						
+							<option value="MLI">MOLINE, IL [MLI]
+						
+							<option value="MLU">MONROE, LA [MLU]
+						
+							<option value="MLW">MONROVIA, LIBERIA [MLW]
+						
+							<option value="MBJ">MONTEGO BAY, JAMAICA [MBJ]
+						
+							<option value="MRY">MONTEREY, CA [MRY]
+						
+							<option value="MTY">MONTERREY, MEXICO [MTY]
+						
+							<option value="MGM">MONTGOMERY, AL [MGM]
+						
+							<option value="YMQ">MONTREAL, QUEBEC, CANADA [YMQ]
+						
+							<option value="YUL">MONTREAL, QUEBEC, CANADA [YUL]
+						
+							<option value="MLM">MORELIA, MEXICO [MLM]
+						
+							<option value="MGW">MORGANTOWN, WV [MGW]
+						
+							<option value="MOW">MOSCOW, RUSSIA [MOW]
+						
+							<option value="MUC">MUNICH, GERMANY [MUC]
+						
+							<option value="MCT">MUSCAT, OMAN [MCT]
+						
+							<option value="MYR">MYRTLE BEACH, SC [MYR]
+						
+							<option value="NGO">NAGOYA, JAPAN [NGO]
+						
+							<option value="NBO">NAIROBI, KENYA [NBO]
+						
+							<option value="NAP">NAPLES, ITALY [NAP]
+						
+							<option value="BNA">NASHVILLE, TN [BNA]
+						
+							<option value="NAS">NASSAU, BAHAMAS [NAS]
+						
+							<option value="NDJ">NDJAMENA, CHAD [NDJ]
+						
+							<option value="EWN">NEW BERN, NC [EWN]
+						
+							<option value="HVN">NEW HAVEN, CT [HVN]
+						
+							<option value="MSY">NEW ORLEANS, LA [MSY]
+						
+							<option value="JFK">NEW YORK, NY [JFK]
+						
+							<option value="LGA">NEW YORK, NY [LGA]
+						
+							<option value="NYC">NEW YORK, NY [NYC]
+						
+							<option value="EWR">NEWARK, NJ [EWR]
+						
+							<option value="SWF">NEWBURGH, NY [SWF]
+						
+							<option value="PHF">NEWPORT NEWS, VA [PHF]
+						
+							<option value="NIM">NIAMEY, NIGER [NIM]
+						
+							<option value="NCE">NICE, FRANCE [NCE]
+						
+							<option value="OME">NOME, AK [OME]
+						
+							<option value="ORF">NORFOLK, VA [ORF]
+						
+							<option value="OTH">NORTH BEND, OR [OTH]
+						
+							<option value="NUE">NUREMBERG, GERMANY [NUE]
+						
+							<option value="OKA">OKINAWA, JAPAN [OKA]
+						
+							<option value="OKC">OKLAHOMA CITY, OK [OKC]
+						
+							<option value="OMA">OMAHA, NE [OMA]
+						
+							<option value="SNA">ORANGE COUNTY, CA [SNA]
+						
+							<option value="MCO">ORLANDO, FL [MCO]
+						
+							<option value="OSA">OSAKA, JAPAN [OSA]
+						
+							<option value="OSL">OSLO, NORWAY [OSL]
+						
+							<option value="YOW">OTTAWA, ONTARIO, CANADA [YOW]
+						
+							<option value="OUA">OUAGADOUGOU, BURKINA FASO [OUA]
+						
+							<option value="PSP">PALM SPRINGS, CA [PSP]
+						
+							<option value="PTY">PANAMA CITY, PANAMA [PTY]
+						
+							<option value="ECP">PANAMA CITY, FL [ECP]
+						
+							<option value="PAR">PARIS, FRANCE [PAR]
+						
+							<option value="PSC">PASCO, WA [PSC]
+						
+							<option value="PLN">PELLSTON, MI [PLN]
+						
+							<option value="PNS">PENSACOLA, FL [PNS]
+						
+							<option value="PIA">PEORIA, IL [PIA]
+						
+							<option value="PER">PERTH, AUSTRALIA [PER]
+						
+							<option value="PSG">PETERSBURG, AK [PSG]
+						
+							<option value="PHL">PHILADELPHIA, PA [PHL]
+						
+							<option value="PNH">PHNOM PENH, CAMBODIA [PNH]
+						
+							<option value="PHX">PHOENIX/SCOTTSDALE, AZ [PHX]
+						
+							<option value="PIR">PIERRE, SD [PIR]
+						
+							<option value="PSA">PISA, ITALY [PSA]
+						
+							<option value="PIT">PITTSBURGH, PA [PIT]
+						
+							<option value="PBG">PLATTSBURGH, NY [PBG]
+						
+							<option value="PIH">POCATELLO, ID [PIH]
+						
+							<option value="POS">PORT OF SPAIN, TRINIDAD & TOBAGO [POS]
+						
+							<option value="PAP">PORT-AU-PRINCE, HAITI [PAP]
+						
+							<option value="PWM">PORTLAND, ME [PWM]
+						
+							<option value="PDX">PORTLAND, OR [PDX]
+						
+							<option value="PRG">PRAGUE, CZECH REPUBLIC [PRG]
+						
+							<option value="PQI">PRESQUE ISLE, ME [PQI]
+						
+							<option value="PVD">PROVIDENCE, RI [PVD]
+						
+							<option value="PLS">PROVIDENCIALES, TURKS AND CAICOS [PLS]
+						
+							<option value="SCC">PRUDHOE BAY/DEADHORSE, AK [SCC]
+						
+							<option value="PVR">PUERTO VALLARTA, MEXICO [PVR]
+						
+							<option value="PUW">PULLMAN, WA [PUW]
+						
+							<option value="PUJ">PUNTA CANA, DOMINICAN REPUBLIC [PUJ]
+						
+							<option value="PUS">PUSAN, KOREA [PUS]
+						
+							<option value="YQB">QUEBEC, QUEBEC, CANADA [YQB]
+						
+							<option value="QRO">QUERETARO, MEXICO [QRO]
+						
+							<option value="UIO">QUITO, ECUADOR [UIO]
+						
+							<option value="RBA">RABAT, MOROCCO [RBA]
+						
+							<option value="RDU">RALEIGH-DURHAM, NC [RDU]
+						
+							<option value="RAP">RAPID CITY, SD [RAP]
+						
+							<option value="REC">RECIFE, BRAZIL [REC]
+						
+							<option value="RDD">REDDING, CA [RDD]
+						
+							<option value="RDM">REDMOND, OR [RDM]
+						
+							<option value="RNO">RENO, NV [RNO]
+						
+							<option value="REK">REYKJAVIK, ICELAND [REK]
+						
+							<option value="RHI">RHINELANDER, WI [RHI]
+						
+							<option value="RIC">RICHMOND, VA [RIC]
+						
+							<option value="RIX">RIGA, LATVIA [RIX]
+						
+							<option value="RIO">RIO DE JANIERO, BRAZIL [RIO]
+						
+							<option value="ROA">ROANOKE, VA [ROA]
+						
+							<option value="RST">ROCHESTER, MN [RST]
+						
+							<option value="ROC">ROCHESTER, NY [ROC]
+						
+							<option value="RKS">ROCK SPRINGS, WY [RKS]
+						
+							<option value="ROM">ROME, ITALY [ROM]
+						
+							<option value="ROW">ROSWELL, NM [ROW]
+						
+							<option value="SMF">SACRAMENTO, CA [SMF]
+						
+							<option value="MBS">SAGINAW, MI [MBS]
+						
+							<option value="SPN">SAIPAN, MARIANA ISLANDS [SPN]
+						
+							<option value="SBY">SALISBURY, MD [SBY]
+						
+							<option value="SLC">SALT LAKE CITY, UT [SLC]
+						
+							<option value="SSA">SALVADOR, BRAZIL [SSA]
+						
+							<option value="SJT">SAN ANGELO, TX [SJT]
+						
+							<option value="SAT">SAN ANTONIO, TX [SAT]
+						
+							<option value="SAN">SAN DIEGO, CA [SAN]
+						
+							<option value="OAK">SAN FRANCISCO, CA [OAK]
+						
+							<option value="SFO">SAN FRANCISCO, CA [SFO]
+						
+							<option value="SJO">SAN JOSE, COSTA RICA [SJO]
+						
+							<option value="SJC">SAN JOSE, CA [SJC]
+						
+							<option value="SJU">SAN JUAN, PR [SJU]
+						
+							<option value="SBP">SAN LUIS OBISPO, CA [SBP]
+						
+							<option value="SAP">SAN PEDRO, HONDURAS [SAP]
+						
+							<option value="SAL">SAN SALVADOR, EL SALVADOR [SAL]
+						
+							<option value="SBA">SANTA BARBARA, CA [SBA]
+						
+							<option value="SRZ">SANTA CRUZ, BOLIVIA [SRZ]
+						
+							<option value="SAF">SANTA FE, NM [SAF]
+						
+							<option value="SMX">SANTA MARIA, CA [SMX]
+						
+							<option value="STS">SANTA ROSA, CA [STS]
+						
+							<option value="SCL">SANTIAGO, CHILE [SCL]
+						
+							<option value="STI">SANTIAGO, DOMENICAN REPUBLIC [STI]
+						
+							<option value="SDQ">SANTO DOMINGO, DOMINICAN REPUBLIC [SDQ]
+						
+							<option value="SAO">SAO PAULO, BRAZIL [SAO]
+						
+							<option value="SJJ">SARAJEVO, BOSNIA [SJJ]
+						
+							<option value="SRQ">SARASOTA-BRADENTON, FL [SRQ]
+						
+							<option value="SAV">SAVANNAH, GA [SAV]
+						
+							<option value="AVP">SCRANTON, PA [AVP]
+						
+							<option value="SEA">SEATTLE-TACOMA, WA [SEA]
+						
+							<option value="SEL">SEOUL, KOREA [SEL]
+						
+							<option value="SHA">SHANGHAI, CHINA [SHA]
+						
+							<option value="SNN">SHANNON, IRELAND [SNN]
+						
+							<option value="SHV">SHREVEPORT, LA [SHV]
+						
+							<option value="SIN">SINGAPORE, SINGAPORE [SIN]
+						
+							<option value="SUX">SIOUX CITY, IA [SUX]
+						
+							<option value="FSD">SIOUX FALLS, SD [FSD]
+						
+							<option value="SIT">SITKA, AK [SIT]
+						
+							<option value="SKP">SKOPJE, MACEDONIA [SKP]
+						
+							<option value="SOF">SOFIA, BULGARIA [SOF]
+						
+							<option value="SBN">SOUTH BEND, IN [SBN]
+						
+							<option value="GEG">SPOKANE, WA [GEG]
+						
+							<option value="SPI">SPRINGFIELD, IL [SPI]
+						
+							<option value="SGF">SPRINGFIELD, MO [SGF]
+						
+							<option value="STX">ST. CROIX, VI [STX]
+						
+							<option value="SGU">ST. GEORGE, UT [SGU]
+						
+							<option value="SKB">ST. KITT'S, NEVIS [SKB]
+						
+							<option value="STL">ST. LOUIS, MO [STL]
+						
+							<option value="SLU">ST. LUCIA, SAINT LUCIA [SLU]
+						
+							<option value="LED">ST. PETERSBURG, RUSSIA [LED]
+						
+							<option value="STT">ST. THOMAS, VI [STT]
+						
+							<option value="SCE">STATE COLLEGE, PA [SCE]
+						
+							<option value="SHD">STAUNTON, VA [SHD]
+						
+							<option value="SVG">STAVANGER, NORWAY [SVG]
+						
+							<option value="STO">STOCKHOLM, SWEDEN [STO]
+						
+							<option value="SXB">STRASBOURG, FRANCE [SXB]
+						
+							<option value="STR">STUTTGART, GERMANY [STR]
+						
+							<option value="SUN">SUN VALLEY, ID [SUN]
+						
+							<option value="SYD">SYDNEY, NEW  S. WALES, AUSTRALIA [SYD]
+						
+							<option value="SYR">SYRACUSE, NY [SYR]
+						
+							<option value="TPE">TAIPEI, TAIWAN [TPE]
+						
+							<option value="TLH">TALLAHASSEE, FL [TLH]
+						
+							<option value="TPA">TAMPA, FL [TPA]
+						
+							<option value="TGU">TEGUCIGALPA, HONDURAS [TGU]
+						
+							<option value="TLV">TEL AVIV, ISRAEL [TLV]
+						
+							<option value="TXK">TEXARKANA, TX [TXK]
+						
+							<option value="TIA">TIRANA, ALBANIA [TIA]
+						
+							<option value="TYO">TOKYO, JAPAN [TYO]
+						
+							<option value="TOL">TOLEDO, OH [TOL]
+						
+							<option value="YTO">TORONTO, ONTARIO, CANADA [YTO]
+						
+							<option value="EIS">TORTOLA, BEEF ISLAND, BRITISH VIRGIN ISLANDS [EIS]
+						
+							<option value="TLS">TOULOUSE, FRANCE [TLS]
+						
+							<option value="TVC">TRAVERSE CITY, MI [TVC]
+						
+							<option value="TRI">TRI-CITIES, TN [TRI]
+						
+							<option value="TRD">TRONDHEIM, NORWAY [TRD]
+						
+							<option value="TUS">TUCSON, AZ [TUS]
+						
+							<option value="TUL">TULSA, OK [TUL]
+						
+							<option value="TUN">TUNIS, TUNISIA [TUN]
+						
+							<option value="TUP">TUPELO, MS [TUP]
+						
+							<option value="TRN">TURIN, ITALY [TRN]
+						
+							<option value="TWF">TWIN FALLS, ID [TWF]
+						
+							<option value="TYR">TYLER, TX [TYR]
+						
+							<option value="VLD">VALDOSTA, GA [VLD]
+						
+							<option value="YVR">VANCOUVER, B.C., CANADA [YVR]
+						
+							<option value="VCE">VENICE, ITALY [VCE]
+						
+							<option value="VER">VERONA, ITALY [VER]
+						
+							<option value="VRN">VERONA, ITALY [VRN]
+						
+							<option value="VCT">VICTORIA, TX [VCT]
+						
+							<option value="YYJ">VICTORIA, B.C., CANADA [YYJ]
+						
+							<option value="VIE">VIENNA, AUSTRIA [VIE]
+						
+							<option value="VNO">VILNIUS, LITHUANIA [VNO]
+						
+							<option value="ACT">WACO, TX [ACT]
+						
+							<option value="ALW">WALLA WALLA, WA [ALW]
+						
+							<option value="WAW">WARSAW, POLAND [WAW]
+						
+							<option value="BWI">WASHINGTON, DC [BWI]
+						
+							<option value="DCA">WASHINGTON, DC [DCA]
+						
+							<option value="IAD">WASHINGTON, DC [IAD]
+						
+							<option value="WAS">WASHINGTON, DC [WAS]
+						
+							<option value="ALO">WATERLOO, IA [ALO]
+						
+							<option value="ART">WATERTOWN, NY [ART]
+						
+							<option value="ATY">WATERTOWN, SD [ATY]
+						
+							<option value="CWA">WAUSAU, WI [CWA]
+						
+							<option value="EAT">WENATCHEE, WA [EAT]
+						
+							<option value="PBI">WEST PALM BEACH, FL [PBI]
+						
+							<option value="HPN">WHITE PLAINS, NY [HPN]
+						
+							<option value="ICT">WICHITA, KS [ICT]
+						
+							<option value="SPS">WICHITA FALLS, TX [SPS]
+						
+							<option value="IPT">WILLIAMSPORT, PA [IPT]
+						
+							<option value="ILM">WILMINGTON, NC [ILM]
+						
+							<option value="YWG">WINNEPEG, MANITOBA, CANADA [YWG]
+						
+							<option value="WRG">WRANGELL, AK [WRG]
+						
+							<option value="YKM">YAKIMA, WA [YKM]
+						
+							<option value="YAK">YAKUTAT, AK [YAK]
+						
+							<option value="YUM">YUMA, AZ [YUM]
+						
+							<option value="ZAG">ZAGREB, CROATIA [ZAG]
+						
+							<option value="ZRH">ZURICH, SWITZERLAND [ZRH]
+												
+					</select>
+					<p>Or Enter City or Airport Code </p>
+					<input type="text" name="arriving_to"  id="arriving_to" size="15">
+					</div>
+					
+ 						<input type="submit" name="search2013.x" value="Search FY13" class= "btn btn-primary" title="Search FY 2013">
+						<input type="button" value="Help"  class="btn" style="width:85px;" onClick="WinOpen('http://apps.fas.gsa.gov/citypairs/search/HelpSearchEngine.cfm', 750, 625)">						
+
+	
+	</form>
+
+<link rel="stylesheet" href="../m/css/contacts.css">
+</div>
+
+

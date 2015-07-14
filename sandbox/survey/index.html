@@ -1,0 +1,33 @@
+<div id="survey">
+	<script>
+	$(function(){
+		$('.link-test a').click(function(){
+			var linkURL = $(this).attr('href');
+			if(linkURL.indexOf('#!') === -1){
+				var roll = randInt(1,4);
+				if(roll === 1){
+					goSatisfaction($(this).text(),linkURL,document.title,window.location.href);
+				}
+				else{
+					window.location.href = linkURL;
+				}
+			}
+			else{
+				window.location.href = linkURL;
+			}
+			return false;
+		});
+	});
+	function randInt(min, max){
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	function goSatisfaction(linkTitle,linkURL,referTitle,referURL){
+		window.location.href = mRoot + '/#/survey?' + linkTitle + '&' + linkURL + '&' + referTitle + '&' + referURL;
+	}
+	</script>
+	
+	<div class="well link-test">
+	<h3>Simulated Links</h3>
+	<a href="http://gsa.gov">Full Site Link</a><br><a href="http://m.gsa.gov/m/#!">Mobile Site Link</a>
+	</div>
+</div>

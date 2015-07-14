@@ -1,0 +1,34 @@
+<div id="careers">
+	<h1>Careers</h1>
+	<p>GSA is hiring! We have openings for accountants, contract specialists, IT professionals, attorneys and more. If it's about the business of government, it's about GSA.</p>
+	<p> Below is a list of GSA jobs open to all US citizens. To see a complete list of GSA job openings and apply, <a href="http://usajobs.gov" target="_blank">visit USAJOBS.gov.</a><p>
+
+<hr>
+<div class="load">
+<ul id="usaJobs" class="feedEkList">
+	<noscript>Javascript is required to view the jobs feed on this page. Click the link above to go to the source RSS feed page.</noscript>
+</ul>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('#usaJobs').FeedEk({
+		  FeedUrl : 'http://gsa.usajobs.gov/JobSearch/Search/RSSFeed/2206734',
+		  ShowPubDate: false,
+		  MaxCount : 10
+		});
+		setInterval(function(){
+			if($('#usaJobs').html() === ''){
+				//do nothing
+			}
+			else{
+				$('font').attr('color','#333').css("font-weight","bold");
+				return false;
+			}
+		},200);
+	});	
+</script>
+
+</div>
+
+<meta name="organization" content="CPO"><meta name="program" content="CA"><meta name="title" content="Careers">
+

@@ -1,0 +1,17 @@
+.btn-info {
+  color: #ffffff;
+  background-image: -moz-linear-gradient(top, #1f578d, #174775);
+  background-image: -ms-linear-gradient(top, #1f578d, #174775);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1f578d), to(#174775));
+  background-image: -webkit-linear-gradient(top, #1f578d, #174775);
+  background-image: -o-linear-gradient(top, #1f578d, #174775);
+  background-image: linear-gradient(top, #1f578d, #174775);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#'1f578d, endColorstr='#'174775, GradientType=0);
+}
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled] {
+  background-color: #174775;
+}

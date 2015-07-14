@@ -1,0 +1,133 @@
+body{
+	background:black;
+	font-family: "Alright Sans";
+}
+#chartApp{
+	width:790px;
+	height:590px;
+	background: #ffffff;
+	position:relative;
+	margin:20px auto;
+	border-radius:6px;
+	z-index:100;
+}
+#chartApp #topNav{
+	height:20px;
+	padding:25px 15px 15px 15px;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	font-family:arial;
+	font-weight:bold;
+}
+#chartApp #backNav{
+	height:20px;
+	padding:25px 15px 15px 15px;
+	position:absolute;
+	top:0;
+	right:0;
+	display:none;
+}
+#chartApp #topNav a,#chartApp #backNav a{
+	text-decoration: none;
+	border-top:8px solid black;
+	color:black;
+	margin-right:5px;
+	padding-top:2px;
+	cursor:pointer;
+}
+#chartApp #backNav a{
+	padding-top:5px;
+}
+
+#chartApp #topNav a.on, #chartApp #sideNav a.on{
+	border-color:#84c6ff;
+}
+#chartApp #topNav a.disabled, #chartApp #sideNav a.disabled{
+	color:#bbb;
+	border-top-color:#bbb;
+	border-left-color:#bbb;
+	cursor:default;
+}
+#chartApp #sideNav{
+	width:120px;
+	position:absolute;
+	top:50px;
+	left:0;
+	padding:10px;
+}
+#chartApp #sideNav h3{
+	font-size:14px;
+	border-bottom: 1px solid #999;
+}
+#chartApp #sideNav ul{
+	margin:0;
+	padding:0;
+}
+#chartApp #sideNav li{
+	font-size:12px;
+	list-style-type: none;
+	padding-bottom:5px;
+}
+#chartApp #sideNav li a{
+	text-decoration: none;
+	color:black;
+	border-left: 8px solid black;
+	padding-left:3px;
+}
+#chartApp #main{
+	width:610px;
+	position:absolute;
+	top:50px;
+	left:140px;
+	padding:20px 0 20px 40px;
+
+}
+#tableStaging{
+	width:0;
+	height:0;
+	overflow:hidden;
+}
+#loading{
+	position:absolute;
+	top:0;
+	left:0;
+	width:790px;
+	height:590px;
+	border-radius:6px;
+	z-index:101;
+	background-color:white;
+	opacity:0.9;
+	background-image:url('load.gif');
+	background-position:center;
+	background-repeat:no-repeat;
+}
+#loading span{
+	position:absolute;
+	display:block;
+	text-align: center;
+	width:790px;
+	top:340px;
+	color:#666;
+}
+span.hint{
+	color:#999;
+	font-size:10px;
+	margin-left:5px;
+	font-weight: normal;
+	display:none;
+}
+#hints{
+	display:block;
+	background:#999;
+	color:#fff;
+	font-size:10px;
+	text-align:center;
+	cursor:pointer;
+	position:absolute;
+	padding:5px;
+	bottom:20px;
+	right:20px;
+	border-radius: 2px;
+}
