@@ -1,4 +1,4 @@
-var root = 'http://dev.oagov.com/git/mgsa'
+var root = 'http://dev.oagov.com/git/mgsa',
     mRoot = root,
     wwwRoot = 'http://dev.oagov.com:3333/portal',
     homePage = '',
