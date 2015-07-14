@@ -476,7 +476,7 @@ var Router = {
     }
 
     //EMERGENCY BANNER PLUGIN 0.2
-    function emergencyBanner() {
+    /*function emergencyBanner() {
         $('#banner-ER-stage').load('http://dev.m.gsa.gov/portal/content/117474 .banner-feed-wrap', function() {
             var status = $('.banner-ER-status .disGoes').text().toLowerCase();
             if (status === 'active') {
@@ -499,7 +499,7 @@ var Router = {
 
             }
         });
-    };
+    };*/
 
 function analyticsMeta() {
     if (root === 'http://m.gsa.gov') {
